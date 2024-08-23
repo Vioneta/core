@@ -1,4 +1,4 @@
-"""LOQED lock integration for Home Assistant."""
+"""LOQED lock integration for Vioneta Agro."""
 
 from __future__ import annotations
 

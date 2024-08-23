@@ -469,7 +469,7 @@ class PipelineRtpDatagramProtocol(RtpDatagramProtocol):
         )
 
     async def _play_listening_tone(self) -> None:
-        """Play a tone to indicate that Home Assistant is listening."""
+        """Play a tone to indicate that Vioneta Agro is listening."""
         if self._tone_bytes is None:
             # Do I/O in executor
             self._tone_bytes = await self.hass.async_add_executor_job(
@@ -483,7 +483,7 @@ class PipelineRtpDatagramProtocol(RtpDatagramProtocol):
         )
 
     async def _play_processing_tone(self) -> None:
-        """Play a tone to indicate that Home Assistant is processing the voice command."""
+        """Play a tone to indicate that Vioneta Agro is processing the voice command."""
         if self._processing_bytes is None:
             # Do I/O in executor
             self._processing_bytes = await self.hass.async_add_executor_job(

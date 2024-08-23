@@ -108,7 +108,7 @@ async def async_setup_entry(
     config_entry: ConfigEntry,
     async_add_entities: AddEntitiesCallback,
 ) -> None:
-    """Set up Home Assistant Cloud text-to-speech platform."""
+    """Set up Vioneta Agro Cloud text-to-speech platform."""
     tts_platform_loaded = hass.data[DATA_PLATFORMS_SETUP][Platform.TTS]
     tts_platform_loaded.set()
     cloud = hass.data[DATA_CLOUD]
@@ -116,9 +116,9 @@ async def async_setup_entry(
 
 
 class CloudTTSEntity(TextToSpeechEntity):
-    """Home Assistant Cloud text-to-speech entity."""
+    """Vioneta Agro Cloud text-to-speech entity."""
 
-    _attr_name = "Home Assistant Cloud"
+    _attr_name = "Vioneta Agro Cloud"
     _attr_unique_id = TTS_ENTITY_UNIQUE_ID
 
     def __init__(self, cloud: Cloud[CloudClient]) -> None:
@@ -183,7 +183,7 @@ class CloudTTSEntity(TextToSpeechEntity):
     async def async_get_tts_audio(
         self, message: str, language: str, options: dict[str, Any]
     ) -> TtsAudioType:
-        """Load TTS from Home Assistant Cloud."""
+        """Load TTS from Vioneta Agro Cloud."""
         gender: Gender | str | None = options.get(ATTR_GENDER)
         gender = handle_deprecated_gender(self.hass, gender)
         original_voice: str | None = options.get(ATTR_VOICE)
@@ -216,7 +216,7 @@ class CloudTTSEntity(TextToSpeechEntity):
 
 
 class CloudProvider(Provider):
-    """Home Assistant Cloud speech API provider."""
+    """Vioneta Agro Cloud speech API provider."""
 
     def __init__(self, cloud: Cloud[CloudClient]) -> None:
         """Initialize cloud provider."""
@@ -262,7 +262,7 @@ class CloudProvider(Provider):
     async def async_get_tts_audio(
         self, message: str, language: str, options: dict[str, Any]
     ) -> TtsAudioType:
-        """Load TTS from Home Assistant Cloud."""
+        """Load TTS from Vioneta Agro Cloud."""
         assert self.hass is not None
         gender: Gender | str | None = options.get(ATTR_GENDER)
         gender = handle_deprecated_gender(self.hass, gender)
@@ -313,7 +313,7 @@ def handle_deprecated_gender(
         breaks_in_ha_version="2024.10.0",
         translation_key="deprecated_gender",
         translation_placeholders={
-            "integration_name": "Home Assistant Cloud",
+            "integration_name": "Vioneta Agro Cloud",
             "deprecated_option": "gender",
             "replacement_option": "voice",
         },

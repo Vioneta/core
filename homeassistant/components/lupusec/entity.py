@@ -1,4 +1,4 @@
-"""Provides the Lupusec entity for Home Assistant."""
+"""Provides the Lupusec entity for Vioneta Agro."""
 
 import lupupy
 

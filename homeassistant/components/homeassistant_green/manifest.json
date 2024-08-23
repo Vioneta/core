@@ -1,6 +1,6 @@
 {
   "domain": "homeassistant_green",
-  "name": "Home Assistant Green",
+  "name": "Vioneta Agro Green",
   "after_dependencies": ["hassio"],
   "codeowners": ["@home-assistant/core"],
   "config_flow": false,

@@ -94,12 +94,12 @@ async def async_setup_entry(
 
 
 def to_lutron_level(level):
-    """Convert the given Home Assistant light level (0-255) to Lutron (0.0-100.0)."""
+    """Convert the given Vioneta Agro light level (0-255) to Lutron (0.0-100.0)."""
     return float((level * 100) / 255)
 
 
 def to_hass_level(level):
-    """Convert the given Lutron (0.0-100.0) light level to Home Assistant (0-255)."""
+    """Convert the given Lutron (0.0-100.0) light level to Vioneta Agro (0-255)."""
     return int((level * 255) / 100)
 
 

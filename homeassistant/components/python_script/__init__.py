@@ -310,7 +310,7 @@ class StubPrinter:
 class TimeWrapper:
     """Wrap the time module."""
 
-    # Class variable, only going to warn once per Home Assistant run
+    # Class variable, only going to warn once per Vioneta Agro run
     warned = False
 
     def sleep(self, *args, **kwargs):
@@ -318,7 +318,7 @@ class TimeWrapper:
         if not TimeWrapper.warned:
             TimeWrapper.warned = True
             _LOGGER.warning(
-                "Using time.sleep can reduce the performance of Home Assistant"
+                "Using time.sleep can reduce the performance of Vioneta Agro"
             )
 
         time.sleep(*args, **kwargs)

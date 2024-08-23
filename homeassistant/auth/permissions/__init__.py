@@ -1,4 +1,4 @@
-"""Permissions for Home Assistant."""
+"""Permissions for Vioneta Agro."""
 
 from __future__ import annotations
 

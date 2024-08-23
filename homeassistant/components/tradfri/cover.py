@@ -39,7 +39,7 @@ async def async_setup_entry(
 
 
 class TradfriCover(TradfriBaseEntity, CoverEntity):
-    """The platform class required by Home Assistant."""
+    """The platform class required by Vioneta Agro."""
 
     _attr_name = None
 

@@ -100,8 +100,1177 @@ default_config:
 
 # Load frontend themes from the themes folder
 frontend:
-  themes: !include_dir_merge_named themes
+    themes:
+        Classic Vioneta:
+            modes:
+                light:
 
+                    primary-color: "#4F46E5"
+                    accent-color: "#BEF264"
+
+                    # Header
+                    app-header-background-color: "#4338CA"
+                    app-header-text-color: "#EEF2FF"
+
+                    primary-background-color: "#F1F5F9"
+                    secondary-background-color: "#E4E4E7"
+                    # Fonts
+                    primary-font-family: "Tahoma"
+                    secondary-font-family: "Trebuchet MS"
+                    paper-font-common-base_-_font-family: "var(--secondary-font-family)"
+                    paper-font-common-code_-_font-family: "var(--secondary-font-family)"
+                    paper-font-body1_-_font-family: "var(--secondary-font-family)"
+                    paper-font-subhead_-_font-family: "var(--secondary-font-family)"
+                    paper-font-headline_-_font-family: "var(--primary-font-family)"
+                    paper-font-caption_-_font-family: "var(--secondary-font-family)"
+                    paper-font-title_-_font-family: "var(--primary-font-family)"
+                    ha-card-header-font-family: "var(--primary-font-family)"
+
+                dark:
+                    primary-color: "#4338CA"
+                    accent-color: darkred
+
+                    # Header
+                    app-header-background-color: "#6D28D9"
+                    app-header-text-color: "#F9FAFB"
+
+                    primary-background-color: "#18181B"
+                    secondary-background-color: "#52525B"
+                    # Fonts
+                    primary-font-family: "Tahoma"
+                    secondary-font-family: "Trebuchet MS"
+                    paper-font-common-base_-_font-family: "var(--secondary-font-family)"
+                    paper-font-common-code_-_font-family: "var(--secondary-font-family)"
+                    paper-font-body1_-_font-family: "var(--secondary-font-family)"
+                    paper-font-subhead_-_font-family: "var(--secondary-font-family)"
+                    paper-font-headline_-_font-family: "var(--primary-font-family)"
+                    paper-font-caption_-_font-family: "var(--secondary-font-family)"
+                    paper-font-title_-_font-family: "var(--primary-font-family)"
+                    ha-card-header-font-family: "var(--primary-font-family)"
+        Latte Vioneta:
+            modes:
+                light:
+                    # Colors
+                    text: "#4c4f69"
+
+                    subtext1: "#5c5f77"
+                    subtext0: "#6c6f85"
+
+                    overlay2: "#7c7f93"
+                    overlay1: "#8c8fa1"
+                    overlay0: "#9ca0b0"
+
+                    surface2: "#acb0be"
+                    surface1: "#bcc0cc"
+                    surface0: "#ccd0da"
+
+                    base: "#eff1f5"
+                    mantle: "#e6e9ef"
+                    crust: "#dce0e8"
+
+                    rosewater: "#dc8a78"
+                    flamingo: "#dd7878"
+                    pink: "#ea76cb"
+                    mauve: "#8839ef"
+                    red: "#d20f39"
+                    maroon: "#e64553"
+                    peach: "#fe640b"
+                    yellow: "#df8e1d"
+                    green: "#40a02b"
+                    teal: "#179299"
+                    sky: "#04a5e5"
+                    sapphire: "#209fb5"
+                    blue: "#1e66f5"
+                    lavender: "#7287fd"
+
+                    ###########################
+
+                    # Header
+                    app-header-background-color: var(--mantle)
+                    app-header-text-color: var(--text)
+
+                    # Main Interface colors
+                    primary-color: var(--blue)
+                    light-primary-color: var(--primary-color)
+
+                    primary-background-color: var(--mantle)
+                    secondary-background-color: var(--mantle)
+                    accent-color: var(--yellow)
+
+                    # Text
+                    primary-text-color: var(--text)
+                    secondary-text-color: var(--subtext1)
+                    text-primary-color: var(--text)
+                    divider-color: var(--base)
+                    disabled-text-color: var(--overlay0)
+                    text-accent-color: var(--text)
+
+                    # Sidebar
+                    sidebar-background-color: var(--crust)
+                    sidebar-selected-background-color: var(--primary-background-color)
+
+                    sidebar-icon-color: var(--subtext0)
+                    sidebar-text-color: var(--subtext0)
+                    sidebar-selected-icon-color: var(--mauve)
+                    sidebar-selected-text-color: var(--mauve)
+
+                    # Buttons
+                    paper-item-icon-color: var(--subtext0)
+                    paper-item-icon-active-color: var(--primary-color)
+
+                    # States and Badges
+                    state-icon-color: var(--lavender)
+                    state-icon-active-color: var(--primary-color)
+
+                    state-icon-unavailable-color: var(--disabled-text-color)
+
+                    # Sliders
+                    paper-slider-knob-color: var(--blue)
+                    paper-slider-knob-start-color: var(--paper-slider-knob-color)
+                    paper-slider-pin-color: var(--paper-slider-knob-color)
+                    paper-slider-active-color: var(--paper-slider-knob-color)
+                    paper-slider-secondary-color: var(--blue)
+
+                    # Labels
+                    label-badge-background-color: var(--surface0)
+                    label-badge-text-color: var(--text)
+                    label-badge-red: var(--red)
+                    label-badge-green: var(--green)
+                    label-badge-blue: var(--blue)
+                    label-badge-yellow: var(--yellow)
+                    label-badge-gray: var(--overlay0)
+
+                    # Cards
+                    card-background-color: var(--base)
+                    ha-card-background: var(--card-background-color)
+
+                    ha-card-border-radius: "15px"
+                    ha-card-box-shadow: none
+                    paper-dialog-background-color: var(--overlay0)
+                    paper-listbox-background-color: var(--overlay0)
+                    paper-card-background-color: var(--card-background-color)
+
+                    # Switches
+                    switch-checked-button-color: var(--green)
+                    switch-checked-track-color: var(--surface0)
+                    switch-unchecked-button-color: rgb(--overlay0)
+                    switch-unchecked-track-color: rgb(--surface0)
+                    # Toggles
+                    paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
+                    paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
+                    paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
+                    paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
+
+                    # Table
+                    table-row-background-color: var(--primary-background-color)
+                    table-row-alternative-background-color: var(--secondary-background-color)
+                    data-table-background-color: var(--primary-background-color)
+                    mdc-checkbox-unchecked-color: var(--overlay0)
+
+                    # Dropdowns
+                    material-background-color: var(--primary-background-color)
+                    material-secondary-background-color: var(--primary-background-color)
+                    mdc-theme-surface: var(--primary-background-color)
+
+                    # Pre/Code
+                    markdown-code-background-color: var(--surface0)
+
+                    # Checkboxes
+                    mdc-select-fill-color: var(--surface0)
+                    mdc-select-ink-color: var(--primary-text-color)
+                    mdc-select-label-ink-color: var(--subtext1)
+                    mdc-select-idle-line-color: var(--primary-text-color)
+                    mdc-select-dropdown-icon-color: var(--secondary-text-color)
+                    mdc-select-hover-line-color: var(--accent-color)
+
+                    # Input
+                    input-fill-color: var(--secondary-background-color)
+                    input-dropdown-icon-color: var(--secondary-text-color)
+                    input-ink-color: var(--primary-text-color)
+                    input-label-ink-color: var(--secondary-text-color)
+                    input-idle-line-color: var(--primary-text-color)
+                    input-hover-line-color: var(--accent-color)
+                    input-disabled-ink-color: var(--disabled-text-color)
+                    input-disabled-line-color: var(--disabled-text-color)
+                    input-outlined-idle-border-color: var(--disabled-text-color)
+                    input-outlined-hover-border-color: var(--disabled-text-color)
+                    input-outlined-disabled-border-color: var(--disabled-text-color)
+                    input-disabled-fill-color: rgba(0, 0, 0, 0)
+
+                    # Toast
+                    paper-toast-background-color: var(--overlay0)
+
+                    # Colors
+                    error-color: var(--red)
+                    warning-color: var(--yellow)
+                    success-color: var(--green)
+                    info-color: var(--blue)
+
+                    state-on-color: var(--green)
+                    state-off-color: var(--red)
+
+              
+
+                dark:
+                    # Colors
+                    text: "#c6d0f5"
+                    subtext1: "#b5bfe2"
+                    subtext0: "#a5adce"
+
+                    overlay2: "#949cbb"
+                    overlay1: "#838ba7"
+                    overlay0: "#737994"
+
+                    surface2: "#626880"
+                    surface1: "#51576d"
+                    surface0: "#414559"
+
+                    base: "#303446"
+                    mantle: "#292c3c"
+                    crust: "#232634"
+
+                    rosewater: "#f2d5cf"
+                    flamingo: "#eebebe"
+                    pink: "#f4b8e4"
+                    mauve: "#ca9ee6"
+                    red: "#e78284"
+                    maroon: "#ea999c"
+                    peach: "#ef9f76"
+                    yellow: "#e5c890"
+                    green: "#a6d189"
+                    teal: "#81c8be"
+                    sky: "#99d1db"
+                    sapphire: "#85c1dc"
+                    blue: "#8caaee"
+                    lavender: "#babbf1"
+
+                    ###########################
+
+                    # Header
+                    app-header-background-color: var(--mantle)
+                    app-header-text-color: var(--text)
+
+                    # Main Interface colors
+                    primary-color: var(--blue)
+                    light-primary-color: var(--primary-color)
+                    accent-color: var(--yellow)
+
+                    primary-background-color: var(--base)
+                    secondary-background-color: var(--base)
+
+                    # Text
+                    primary-text-color: var(--text)
+                    secondary-text-color: var(--subtext1)
+                    text-primary-color: var(--text)
+                    divider-color: var(--base)
+                    disabled-text-color: var(--overlay0)
+                    text-accent-color: var(--base)
+
+                    # Sidebar
+                    sidebar-background-color: var(--crust)
+                    sidebar-selected-background-color: var(--primary-background-color)
+
+                    sidebar-icon-color: var(--subtext0)
+                    sidebar-text-color: var(--subtext0)
+                    sidebar-selected-icon-color: var(--mauve)
+                    sidebar-selected-text-color: var(--mauve)
+
+                    # Buttons
+                    paper-item-icon-color: var(--subtext0)
+                    paper-item-icon-active-color: var(--primary-color)
+
+                    # States and Badges
+                    state-icon-color: var(--lavender)
+                    state-icon-active-color: var(--primary-color)
+
+                    state-icon-unavailable-color: var(--disabled-text-color)
+
+                    # Sliders
+                    paper-slider-knob-color: var(--blue)
+                    paper-slider-knob-start-color: var(--paper-slider-knob-color)
+                    paper-slider-pin-color: var(--paper-slider-knob-color)
+                    paper-slider-active-color: var(--paper-slider-knob-color)
+                    paper-slider-secondary-color: var(--blue)
+
+                    # Labels
+                    label-badge-background-color: var(--surface0)
+                    label-badge-text-color: var(--text)
+                    label-badge-red: var(--red)
+                    label-badge-green: var(--green)
+                    label-badge-blue: var(--blue)
+                    label-badge-yellow: var(--yellow)
+                    label-badge-gray: var(--overlay0)
+
+                    # Cards
+                    card-background-color: var(--surface0)
+                    ha-card-background: var(--card-background-color)
+
+                    ha-card-border-radius: "15px"
+                    ha-card-box-shadow: none
+                    paper-dialog-background-color: var(--overlay0)
+                    paper-listbox-background-color: var(--overlay0)
+                    paper-card-background-color: var(--card-background-color)
+
+                    # Switches
+                    switch-checked-button-color: var(--green)
+                    switch-checked-track-color: var(--surface2)
+                    switch-unchecked-button-color: rgb(--overlay0)
+                    switch-unchecked-track-color: rgb(--surface0)
+
+                    # Toggles
+                    paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
+                    paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
+                    paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
+                    paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
+
+                    # Table
+                    table-row-background-color: var(--primary-background-color)
+                    table-row-alternative-background-color: var(--secondary-background-color)
+                    data-table-background-color: var(--primary-background-color)
+                    mdc-checkbox-unchecked-color: var(--overlay0)
+
+                    # Dropdowns
+                    material-background-color: var(--primary-background-color)
+                    material-secondary-background-color: var(--primary-background-color)
+                    mdc-theme-surface: var(--primary-background-color)
+
+                    # Pre/Code
+                    markdown-code-background-color: var(--surface0)
+
+                    # Checkboxes
+                    mdc-select-fill-color: var(--surface0)
+                    mdc-select-ink-color: var(--primary-text-color)
+                    mdc-select-label-ink-color: var(--subtext1)
+                    mdc-select-idle-line-color: var(--primary-text-color)
+                    mdc-select-dropdown-icon-color: var(--secondary-text-color)
+                    mdc-select-hover-line-color: var(--accent-color)
+
+                    # Input
+                    input-fill-color: var(--secondary-background-color)
+                    input-dropdown-icon-color: var(--secondary-text-color)
+                    input-ink-color: var(--primary-text-color)
+                    input-label-ink-color: var(--secondary-text-color)
+                    input-idle-line-color: var(--primary-text-color)
+                    input-hover-line-color: var(--accent-color)
+                    input-disabled-ink-color: var(--disabled-text-color)
+                    input-disabled-line-color: var(--disabled-text-color)
+                    input-outlined-idle-border-color: var(--disabled-text-color)
+                    input-outlined-hover-border-color: var(--disabled-text-color)
+                    input-outlined-disabled-border-color: var(--disabled-text-color)
+                    input-disabled-fill-color: rgba(0, 0, 0, 0)
+
+                    # Toast
+                    paper-toast-background-color: var(--overlay0)
+
+                    # Colors
+                    error-color: var(--red)
+                    warning-color: var(--yellow)
+                    success-color: var(--green)
+                    info-color: var(--blue)
+
+                    state-on-color: var(--green)
+                    state-off-color: var(--red)
+
+        Dream Vioneta:
+            modes:
+                light:
+                    # Header:
+                    app-header-background-color: rgb(243, 245, 244)
+                    app-header-text-color: var(--primary-text-color)
+                    app-header-selection-bar-color: var(--primary-color)
+                    # Main Interface Colors
+                    primary-color: rgb(0, 122, 255)
+                    primary-background-color: rgb(255, 255, 255)
+                    secondary-background-color: rgb(243, 245, 244)
+                    divider-color: rgb(210, 210, 210)
+                    accent-color: var(--primary-color)
+                    # Text
+                    primary-text-color: rgb(39, 39, 39)
+                    secondary-text-color: rgb(85, 85, 85)
+                    text-primary-color: var(--primary-text-color)
+                    disabled-text-color: rgb(85, 85, 85)
+                    # Sidebar Menu
+                    sidebar-icon-color: rgb(85, 85, 85)
+                    sidebar-text-color: rgb(39, 39, 39)
+                    sidebar-background-color: var(--app-header-background-color)
+                    sidebar-selected-icon-color: var(--primary-color)
+                    sidebar-selected-text-color: var(--sidebar-selected-icon-color)
+                    # Buttons
+                    paper-item-icon-color: rgb(70, 70, 70)
+                    paper-item-icon-active-color: var(--primary-color)
+                    # States and Badges
+                    state-icon-color: var(--paper-item-icon-color)
+                    state-icon-active-color: var(--paper-item-icon-active-color)
+                    state-icon-unavailable-color: rgb(154, 153, 152)
+                    # Sliders
+                    paper-slider-knob-color: rgb(191, 191, 192)
+                    paper-slider-knob-start-color: var(--paper-slider-knob-color)
+                    paper-slider-pin-color: var(--paper-slider-active-color)
+                    paper-slider-active-color: rgb(0, 122, 255)
+                    paper-slider-secondary-color: var(--paper-slider-active-color)
+                    slider-track-color: rgb(203, 203, 205)
+                    # Labels
+                    label-badge-background-color: var(--secondary-background-color)
+                    label-badge-text-color: var(--primary-text-color)
+                    label-badge-red: rgb(253, 73, 67)
+                    label-badge-green: rgb(40, 205, 65)
+                    label-badge-blue: rgb(0, 122, 255)
+                    label-badge-yellow: rgb(255, 204, 0)
+                    label-badge-gray: rgb(142, 142, 147)
+                    # Cards
+                    card-background-color: rgb(243, 243, 244)
+                    ha-card-background, var: rgb(243, 243, 244)
+                    ha-card-border-color: none
+                    ha-card-border-width: 0px
+                    paper-dialog-background-color: var(--card-background-color)
+                    paper-listbox-background-color: var(--card-background-color)
+                    paper-card-background-color: var(--card-background-color)
+                    # Switches
+                    switch-checked-button-color: rgb(255, 255, 255)
+                    switch-checked-track-color: rgb(0, 122, 255)
+                    switch-unchecked-button-color: var(--switch-checked-button-color)
+                    switch-unchecked-track-color: rgb(175, 177, 182)
+                    # Toggles
+                    paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
+                    paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
+                    paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
+                    paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
+                    # Table
+                    table-row-background-color: rgb(244, 244, 245)
+                    table-row-alternative-background-color: rgb(255, 255, 255)
+                    data-table-background-color: rgb(244, 244, 245)
+                    # Dropdowns
+                    material-background-color: var(--table-row-background-color)
+                    material-secondary-background-color: var(--table-row-alternative-background-color)
+                    mdc-theme-surface: var(--secondary-background-color)
+                    # Pre/Code
+                    markdown-code-background-color: rgb(255, 255, 255)
+                    # Checkboxes
+                    mdc-checkbox-unchecked-color: rgb(154, 152, 152)
+                    mdc-checkbox-disable-color: var(--disabled-text-color)
+                    mdc-select-fill-color: rgb(228, 228, 231)
+                    mdc-select-ink-color: var(--primary-text-color)
+                    mdc-select-label-ink-color: var(--secondary-text-color)
+                    mdc-select-idle-line-color: var(--primary-text-color)
+                    mdc-select-dropdown-icon-color: rgb(170, 170, 170)
+                    mdc-select-hover-line-color: var(--accent-color)
+                    mdc-text-field-fill-color: var(--mdc-select-fill-color)
+                    # Input
+                    input-fill-color: var(--secondary-background-color)
+                    input-dropdown-icon-color: var(--secondary-text-color)
+                    input-ink-color: var(--primary-text-color)
+                    input-label-ink-color: var(--secondary-text-color)
+                    input-idle-line-color: var(--primary-text-color)
+                    input-hover-line-color: var(--accent-color)
+                    # Error, Warning, Success and Info colors
+                    error-color: rgb(253, 73, 67)
+                    warning-color: rgb(255, 204, 0)
+                    sucess-color: rgb(40, 205, 65)
+                    info-color: rgb(0, 122, 255)
+                    # Progress bar
+                    ha-bar-background-color: var(--slider-track-color)
+                    # Mushroom Custom cards
+                    mush-rgb-state-entity: 1, 122, 255
+                    mush-rgb-green: 40, 205, 65
+                    mush-rgb-yellow: 255, 204, 0
+                    mush-rgb-orange: 255, 149, 0
+                    mush-rgb-cyan: 85, 190, 240
+                    mush-rgb-purple: 175, 82, 222
+                    mush-rgb-pink: 255, 45, 85
+                    mush-rgb-red: 253, 73, 67
+                    mush-rgb-gray: 142, 142, 147
+                    mush-rgb-disabled: 70, 70, 70
+                    mush-icon-border-radius: 30%
+                    mush-rgb-state-media-player: 0, 122, 255
+                    
+                    #RGB
+                    rgb-primary-text-color: 0, 0, 0
+                    rgb-primary-color: 0, 0, 0
+                    rgb-accent-color: 0, 122, 255
+                    rgb-state-switch-color: var(--rgb-accent-color)
+                    rgb-state-light-color: var(--rgb-accent-color)
+                    rgb-state-fan-color: var(--rgb-accent-color)
+                    rgb-state-script-color: var(--rgb-accent-color)
+                    rgb-state-vacuum-color: var(--rgb-accent-color)
+                    rgb-state-remote-color: var(--rgb-accent-color)
+                    rgb-state-input-boolean-color: var(--rgb-accent-color)
+                    rgb-state-humidifier-color: var(--rgb-accent-color)
+                    rgb-state-cover-color: var(--rgb-accent-color)
+                
+                dark:
+                    # Header:
+                    app-header-background-color: rgb(48, 48, 49)
+                    app-header-text-color: var(--primary-text-color)
+                    app-header-selection-bar-color: var(--primary-color)
+                    # Main Interface Colors
+                    primary-color: rgb(0, 122, 255)
+                    primary-background-color: rgb(28, 29, 31)
+                    secondary-background-color: rgb(48, 48, 49)
+                    divider-color: rgb(22, 23, 24)
+                    accent-color: var(--primary-color)
+                    # Text
+                    primary-text-color: rgb(220, 221, 221)
+                    secondary-text-color: rgb(170, 170, 170)
+                    text-primary-color: var(--primary-text-color)
+                    disabled-text-color: rgb(170, 170, 170)
+                    # Sidebar Menu
+                    sidebar-icon-color: rgb(170, 170, 170)
+                    sidebar-text-color: rgb(220, 221, 221)
+                    sidebar-background-color: var(--app-header-background-color)
+                    sidebar-selected-icon-color: var(--primary-color)
+                    sidebar-selected-text-color: var(--sidebar-selected-icon-color)
+                    # Buttons
+                    paper-item-icon-color: rgb(197, 197, 198)
+                    paper-item-icon-active-color: var(--primary-color)
+                    # States and Badges
+                    state-icon-color: var(--paper-item-icon-color)
+                    state-icon-active-color: var(--paper-item-icon-active-color)
+                    state-icon-unavailable-color: rgb(90, 89, 88)
+                    # Sliders
+                    paper-slider-knob-color: rgb(141, 142, 143)
+                    paper-slider-knob-start-color: var(--paper-slider-knob-color)
+                    paper-slider-pin-color: var(--paper-slider-active-color)
+                    paper-slider-active-color: rgb(0, 122, 255)
+                    paper-slider-secondary-color: var(--paper-slider-active-color)
+                    slider-track-color: rgb(85, 85, 87)
+                    # Labels
+                    label-badge-background-color: var(--secondary-background-color)
+                    label-badge-text-color: var(--primary-text-color)
+                    label-badge-red: rgb(255, 69, 58)
+                    label-badge-green: rgb(50, 215, 75)
+                    label-badge-blue: rgb(0, 122, 255)
+                    label-badge-yellow: rgb(255, 214, 10)
+                    label-badge-gray: rgb(90, 89, 88)
+                    # Cards
+                    card-background-color: rgb(50, 51, 53)
+                    ha-card-background: rgb(50, 51, 53)
+                    ha-card-border-color: none
+                    ha-card-border-width: 0px
+                    paper-dialog-background-color: var(--card-background-color)
+                    paper-listbox-background-color: var(--card-background-color)
+                    paper-card-background-color: var(--card-background-color)
+                    # Switches
+                    switch-checked-button-color: rgb(202, 203, 204)
+                    switch-checked-track-color: rgb(22, 100, 218)
+                    switch-unchecked-button-color: var(--switch-checked-button-color)
+                    switch-unchecked-track-color: rgb(12, 13, 14)
+                    # Toggles
+                    paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
+                    paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
+                    paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
+                    paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
+                    # Table
+                    table-row-background-color: rgb(27, 29, 30)
+                    table-row-alternative-background-color: rgb(38, 40, 41)
+                    data-table-background-color: rgb(27, 29, 30)
+                    # Dropdowns
+                    material-background-color: var(--table-row-background-color)
+                    material-secondary-background-color: var(--table-row-alternative-background-color)
+                    mdc-theme-surface: var(--secondary-background-color)
+                    # Pre/Code
+                    markdown-code-background-color: rgb(64, 64, 65)
+                    # Checkboxes
+                    mdc-checkbox-unchecked-color: rgb(204, 203, 203)
+                    mdc-checkbox-disable-color: var(--disabled-text-color)
+                    mdc-select-fill-color: rgb(43, 45, 46)
+                    mdc-select-ink-color: var(--primary-text-color)
+                    mdc-select-label-ink-color: var(--secondary-text-color)
+                    mdc-select-idle-line-color: var(--primary-text-color)
+                    mdc-select-dropdown-icon-color: rgb(170, 170, 170)
+                    mdc-select-hover-line-color: var(--accent-color)
+                    mdc-text-field-fill-color: var(--mdc-select-fill-color)
+                    
+                    # Input
+                    input-fill-color: var(--secondary-background-color)
+                    input-dropdown-icon-color: var(--secondary-text-color)
+                    input-ink-color: var(--primary-text-color)
+                    input-label-ink-color: var(--secondary-text-color)
+                    input-idle-line-color: var(--primary-text-color)
+                    input-hover-line-color: var(--accent-color)
+                    
+                    # Error, Warning, Success and Info colors
+                    error-color: rgb(255, 69, 58)
+                    warning-color: rgb(255, 214, 10)
+                    sucess-color: rgb(50, 215, 75)
+                    info-color: rgb(0, 122, 255)
+                    
+                    # Progress bar
+                    ha-bar-background-color: var(--slider-track-color)
+                    
+                    # Mushroom Custom cards
+                    mush-rgb-state-entity: 1, 122, 255
+                    mush-rgb-green: 50, 215, 75
+                    mush-rgb-yellow: 255, 214, 10
+                    mush-rgb-orange: 255, 159, 10
+                    mush-rgb-cyan: 90, 200, 245
+                    mush-rgb-purple: 191, 90, 242
+                    mush-rgb-pink: 255, 55, 95
+                    mush-rgb-red: 255, 69, 58
+                    mush-rgb-gray: 90, 89, 88
+                    mush-rgb-disabled: 197, 197, 198
+                    mush-icon-border-radius: 30%
+                    mush-rgb-state-media-player: 0, 122, 255
+                    
+                    #RGB
+                    rgb-primary-text-color: 255, 255, 255
+                    rgb-primary-color: 255, 255, 255
+                    rgb-accent-color: 0, 122, 255
+                    rgb-state-switch-color: var(--rgb-accent-color)
+                    rgb-state-light-color: var(--rgb-accent-color)
+                    rgb-state-fan-color: var(--rgb-accent-color)
+                    rgb-state-script-color: var(--rgb-accent-color)
+                    rgb-state-vacuum-color: var(--rgb-accent-color)
+                    rgb-state-remote-color: var(--rgb-accent-color)
+                    rgb-state-input-boolean-color: var(--rgb-accent-color)
+                    rgb-state-humidifier-color: var(--rgb-accent-color)
+                    rgb-state-cover-color: var(--rgb-accent-color)
+
+
+
+        Drakula Vioneta:
+            modes:
+                dark:
+
+                    # Color tokens
+                    token-rgb-primary: 229, 145, 9
+                    token-color-primary: rgb(var(--token-rgb-primary))
+                    token-color-accent: var(--token-color-primary)
+                    token-color-feedback-info: rgb(138, 208, 248)
+                    token-color-feedback-warning: rgb(244, 180, 0)
+                    token-color-feedback-error: rgb(229, 97, 128)
+                    token-color-feedback-success: rgb(93, 193, 145)
+                    token-color-icon-primary: rgba(228, 228, 231, 1)
+                    token-color-icon-secondary: rgb(138, 140, 153)
+                    token-color-icon-sidebar: rgba(147, 149, 159, 1)
+                    token-color-icon-sidebar-selected: rgba(174, 176, 183, 1)
+                    token-color-text-primary: rgba(228, 228, 231, 1)
+                    token-color-text-secondary: rgb(138, 140, 153)
+                    token-color-text-disabled: rgba(255, 255, 255, 0.5)
+                    token-color-text-sidebar-selected: rgba(214, 215, 219, 1)
+                    token-color-text-sidebar: var(--token-color-text-secondary)
+                    token-color-text-label-badge: rgb(198, 203, 210)
+                    token-color-background-base: rgba(22, 24, 29, 1)
+                    token-color-background-secondary: rgba(28, 29, 33, 1)
+                    token-color-background-sidebar: var(--token-color-background-base)
+                    token-color-background-input-base: rgba(46, 48, 56, 1)
+                    token-color-background-input-disabled: rgba(37, 37, 40, 0.5)
+                    token-color-background-label-badge: rgba(54, 55, 67, 1)
+                    token-color-background-card: rgba(37, 38, 45, 1)
+                    token-color-background-skrim: rgba(0, 0, 3, 0.9)
+                    token-color-background-divider: var(--token-color-background-sidebar)
+                    token-color-background-scrollbar-thumb: rgba(46, 48, 56, 1)
+                    token-color-background-label-badge-red: var(--token-color-feedback-error)
+                    token-color-background-label-badge-green: rgba(78, 183, 128, 1)
+                    token-color-background-label-badge-blue: var(--token-color-feedback-info)
+                    token-color-background-label-badge-yellow: var(--token-color-feedback-warning)
+                    token-color-background-label-badge-grey: rgba(83, 90, 103, 1)
+                    token-color-background-popup-scrim: rgba(4, 5, 7, 0.9)
+                    token-color-border-card: rgba(0, 0, 0, 0)
+
+                    # Opacity tokens
+                    token-opacity-ripple-hover: 0.14
+
+                    # Font tokens
+                    token-font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+
+                    # Size tokens
+                    token-size-radius-small: 9px
+                    token-size-radius-medium: 16px
+                    token-size-radius-large: 18px
+                    token-size-radius-card: var(--token-size-radius-large)
+                    token-size-width-border-card: 0
+                    token-size-height-slider: 4px
+                    token-size-height-navbar: 56px
+                    token-size-font-title: 28px
+
+                    # Weight tokens
+                    token-weight-font-title: 600
+
+                    ##############################################################################
+                    # Definitions
+
+                    # Shapes
+                    mdc-shape-small: var(--token-size-radius-small)
+                    mdc-shape-medium: var(--token-size-radius-medium)
+                    mdc-shape-large: var(--token-size-radius-large)
+
+                    # Sizes
+                    header-height: var(--token-size-height-navbar)
+                    paper-slider-height: var(--token-size-height-slider)
+
+                    # Typography
+                    primary-font-family: var(--token-font-family-primary)
+                    paper-font-common-base_-_font-family: var(--token-font-family-primary)
+                    paper-font-common-code_-_font-family: var(--token-font-family-primary)
+                    paper-font-body1_-_font-family: var(--token-font-family-primary)
+                    paper-font-subhead_-_font-family: var(--token-font-family-primary)
+                    paper-font-headline_-_font-family: var(--token-font-family-primary)
+                    paper-font-caption_-_font-family: var(--token-font-family-primary)
+                    paper-font-title_-_font-family: var(--token-font-family-primary)
+                    ha-card-header-font-family: var(--token-font-family-primary)
+                    mdc-typography-font-family: var(--token-font-family-primary)
+                    mdc-typography-button-font-family: var(--token-font-family-primary)
+                    mdc-typography-body1-font-family: var(--token-font-family-primary)
+                    mdc-typography-button-font-weight: var(--token-weight-font-title)
+
+                    title-font-weight: var(--token-weight-font-title)
+                    title-font-size: var(--token-size-font-title)
+
+                    # Text
+                    primary-text-color: var(--token-color-text-primary)
+                    secondary-text-color: var(--token-color-text-secondary)
+                    text-primary-color: var(--token-color-text-primary)
+                    text-light-primary-color: var(--token-color-text-primary)
+                    disabled-text-color: var(--token-color-text-disabled)
+
+                    # Main interface colors
+                    primary-color: var(--token-color-primary)
+                    dark-primary-color: var(--primary-color)
+                    light-primary-color: var(--primary-color)
+                    accent-color: var(--token-color-accent)
+                    divider-color: var(--token-color-background-divider)
+                    scrollbar-thumb-color: var(--token-color-background-scrollbar-thumb)
+
+                    # Feedback colors
+                    error-color: rgb(234, 114, 135)
+                    warning-color: rgb(255, 219, 117)
+                    success-color: rgb(118, 214, 152)
+                    info-color: rgb(39, 209, 246)
+
+                    # Background
+                    lovelace-background: var(--token-color-background-base)
+                    background-color: var(--token-color-background-base)
+                    primary-background-color: var(--token-color-background-base)
+                    secondary-background-color: var(--token-color-background-secondary)
+
+                    # Navbar
+                    app-header-background-color: var(--primary-background-color)
+                    app-header-text-color: var(--token-color-icon-primary)
+                    app-header-edit-background-color: var(--token-color-background-card)
+
+                    # Sidebar
+                    sidebar-icon-color: var(--token-color-icon-sidebar)
+                    sidebar-text-color: var(--sidebar-icon-color)
+                    sidebar-background-color: var(--token-color-background-sidebar)
+                    sidebar-selected-icon-color: var(--token-color-icon-sidebar-selected)
+                    sidebar-selected-text-color: var(--token-color-text-sidebar-selected)
+
+                    # Cards
+                    border-radius: var(--token-size-radius-card)
+                    card-background-color: var(--token-color-background-card)
+                    ha-card-background: var(--token-color-background-card)
+                    ha-card-border-radius: var(--token-size-radius-card)
+                    ha-card-border-color: var(--token-color-border-card)
+                    ha-card-border-width: var(--token-size-width-border-card)
+                    ha-card-border-style: none
+                    ha-card-border: none
+                    ha-card-box-shadow: none
+
+                    # States
+                    state-icon-color: var(--token-color-icon-primary)
+                    state-on-color: var(--token-color-feedback-success)
+                    state-off-color: var(--token-color-feedback-error)
+
+                    # Label-badge
+                    label-badge-text-color: var(--token-color-text-primary)
+                    label-badge-red: var(--token-color-background-label-badge-red)
+                    label-badge-blue: var(--token-color-background-label-badge-blue)
+                    label-badge-green: var(--token-color-background-label-badge-green)
+                    label-badge-yellow: var(--token-color-background-label-badge-yellow)
+                    label-badge-grey: var(--token-color-background-label-badge-grey)
+
+                    # Chip
+                    ha-chip-text-color: rgb(255, 255, 255)
+
+                    # Dialog
+                    mdc-dialog-scrim-color: var(--token-color-background-popup-scrim)
+
+                    # Slider
+                    paper-slider-knob-color: var(--token-color-primary)
+                    paper-slider-knob-start-color: var(--paper-slider-knob-color)
+                    paper-slider-pin-color: var(--paper-slider-knob-color)
+                    paper-slider-active-color: var(--paper-slider-knob-color)
+                    paper-slider-secondary-color: var(--light-primary-color)
+
+                    # Switch
+                    switch-checked-button-color: var(--primary-color)
+                    switch-checked-track-color: var(--switch-checked-button-color)
+                    switch-unchecked-button-color: rgba(255, 255, 255, 0.7)
+                    switch-unchecked-track-color: rgba(125, 128, 132, 0.4)
+
+                    # Toggles
+                    paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
+                    paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
+                    paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
+                    paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
+                    mdc-checkbox-unchecked-color: var(--token-color-icon-secondary)
+                    mdc-radio-unchecked-color: var(--mdc-checkbox-unchecked-color)
+
+                    # List items
+                    mdc-ripple-hover-opacity: var(--token-opacity-ripple-hover)
+
+                    # Text Fields an Dropdown
+                    input-background-color: var(--token-color-background-input-base)
+                    input-background-token-color-disabled: rgba(var(--input-background-color), 0.5)
+                    input-fill-color: var(--input-background-color)
+                    input-ink-color: var(--token-color-text-primary)
+                    input-label-ink-color: var(--token-color-text-primary)
+                    input-disabled-fill-color: var(--input-background-token-color-disabled)
+                    input-disabled-ink-color: var(--disabled-text-color)
+                    input-disabled-label-ink-color: var(--disabled-text-color)
+                    input-idle-line-color: var(--background-color)
+                    input-dropdown-icon-color: var(--secondary-text-color)
+                    input-hover-line-color: var(--primary-color)
+                    mdc-select-idle-line-color: var(--color-background-base)
+                    mdc-text-field-idle-line-color: var(--mdc-select-idle-line-color)
+
+                    # Editor
+                    code-editor-background-color: var(--token-color-background-base)
+                    codemirror-meta: var(--token-color-text-primary)
+                    codemirror-property: var(--accent-color)
+                    codemirror-atom: var(--codemirror-property)
+                    codemirror-string: rgb(119, 196, 229)
+                    codemirror-keyword: rgb(140, 169, 255)
+                    codemirror-number: rgb(255, 91, 29)
+
+                    # RGB colors
+                    rgb-primary-color: var(--token-rgb-primary)
+                    rgb-accent-color: var(--token-rgb-primary)
+                    rgb-white-color: 240, 243, 255
+                    rgb-purple-color: 189, 157, 255
+                    rgb-pink-color: 255, 98, 192
+                    rgb-red-color: 255, 97, 116
+                    rgb-deep-purple-color: 166, 77, 255
+                    rgb-indigo-color: 84, 132, 255
+                    rgb-blue-color: 33, 150, 243
+                    rgb-light-blue-color: 3, 169, 244
+                    rgb-cyan-color: 0, 188, 212
+                    rgb-teal-color: 107, 255, 237
+                    rgb-green-color: 141, 253, 166
+                    rgb-light-green-color: 156, 255, 166
+                    rgb-lime-color: 205, 220, 57
+                    rgb-yellow-color: 255, 235, 59
+                    rgb-amber-color: 255, 211, 99
+                    rgb-orange-color: var(--rgb-primary-color)
+                    rgb-deep-orange-color: 255, 87, 34
+                    rgb-brown-color: 121, 85, 72
+                    rgb-grey-color: 158, 158, 158
+                    rgb-blue-grey-color: 96, 125, 139
+                    rgb-black-color: 0, 0, 0
+                    rgb-disabled-color: 61, 65, 85
+                    rgb-state-inactive-color: 123, 126, 139
+
+                    ##############################################################################
+                    # Extentions
+
+                    # HACS
+                    hacs-new-color: rgb(27, 153, 123)
+                    hacs-error-color: rgb(182, 46, 95)
+
+                    # Mini graph card
+                    mcg-title-font-weight: 400
+
+                    # Mushroom
+                    mush-title-font-weight: var(--title-font-weight)
+                    mush-title-font-size: var(--title-font-size)
+                    mush-rgb-white: var(--rgb-white-color)
+                    mush-rgb-purple: var(--rgb-purple-color)
+                    mush-rgb-pink: var(--rgb-pink-color)
+                    mush-rgb-red: var(--rgb-red-color)
+                    mush-rgb-deep-purple: var(--rgb-deep-purple-color)
+                    mush-rgb-indigo: var(--rgb-indigo-color)
+                    mush-rgb-blue: var(--rgb-blue-color)
+                    mush-rgb-light-blue: var(--rgb-light-blue-color)
+                    mush-rgb-cyan: var(--rgb-cyan-color)
+                    mush-rgb-teal: var(--rgb-teal-color)
+                    mush-rgb-green: var(--rgb-green-color)
+                    mush-rgb-light-green: var(--rgb-light-green-color)
+                    mush-rgb-lime: var(--rgb-lime-color)
+                    mush-rgb-yellow: var(--rgb-yellow-color)
+                    mush-rgb-amber: var(--rgb-amber-color)
+                    mush-rgb-orange: var(--rgb-orange-color)
+                    mush-rgb-deep-orange: var(--rgb-deep-orange-color)
+                    mush-rgb-brown: var(--rgb-brown-color)
+                    mush-rgb-grey: var(--rgb-grey-color)
+                    mush-rgb-blue-grey: var(--rgb-blue-grey-color)
+                    mush-rgb-black: var(--rgb-black-color)
+                    mush-rgb-disabled: var(--rgb-disabled-color)
+
+                light:
+                    # Graphite is a contemporary theme that offers both a calm dark color scheme and a clean light theme,
+                    # featuring native device fonts and a cohesive design language. 
+                    # Carefully crafted to be visually appealing and easy on the eyes, Graphite ensures a consistent user experience 
+                    # throughout the entire Vioneta Agro interface, including the administration panel and code editors.
+                    # https://github.com/TilmanGriesel/graphite
+
+                    ##############################################################################
+                    # Tokens
+
+                    # Color tokens
+                    token-rgb-primary: 255, 158, 0
+                    token-color-primary: rgb(var(--token-rgb-primary))
+                    token-color-accent: var(--token-color-primary)
+                    token-color-feedback-info: rgb(29, 130, 193)
+                    token-color-feedback-warning: rgb(204, 144, 0)
+                    token-color-feedback-error: rgb(179, 57, 96)
+                    token-color-feedback-success: rgb(29, 143, 95)
+                    token-color-icon-primary: rgba(19, 21, 54, 0.87)
+                    token-color-icon-secondary: rgba(19, 21, 54, 0.8)
+                    token-color-icon-sidebar: rgba(19, 21, 54, 0.7)
+                    token-color-icon-sidebar-selected: var(--token-color-icon-primary)
+                    token-color-text-primary: rgba(19, 21, 54, 0.95)
+                    token-color-text-secondary: rgba(19, 21, 54, 0.8)
+                    token-color-text-disabled: rgba(19, 21, 54, 0.38)
+                    token-color-text-sidebar-selected: var(--token-color-text-primary)
+                    token-color-text-sidebar: var(--token-color-text-secondary)
+                    token-color-text-label-badge: rgba(19, 21, 54, 0.7)
+                    token-color-background-base: rgb(225, 226, 229)
+                    token-color-background-secondary: rgba(245, 245, 245, 1)
+                    token-color-background-sidebar: var(--token-color-background-base)
+                    token-color-background-input-base: rgba(255, 255, 255, 1)
+                    token-color-background-input-disabled: rgba(245, 245, 245, 1)
+                    token-color-background-label-badge: rgba(230, 230, 230, 1)
+                    token-color-background-card: rgba(255, 255, 255, 1)
+                    token-color-background-skrim: rgba(0, 0, 0, 0.5)
+                    token-color-background-divider: rgba(224, 224, 224, 1)
+                    token-color-background-scrollbar-thumb: rgba(200, 200, 200, 1)
+                    token-color-background-label-badge-red: var(--token-color-feedback-error)
+                    token-color-background-label-badge-green: rgba(78, 183, 128, 1)
+                    token-color-background-label-badge-blue: var(--token-color-feedback-info)
+                    token-color-background-label-badge-yellow: var(--token-color-feedback-warning)
+                    token-color-background-label-badge-grey: rgba(83, 90, 103, 1)
+                    token-color-background-popup-scrim: rgba(0, 0, 0, 0.5)
+                    token-color-border-card: rgba(224, 224, 224, 1)
+
+                    # Opacity tokens
+                    token-opacity-ripple-hover: 0.14
+
+                    # Font tokens
+                    token-font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+
+                    # Size tokens
+                    token-size-radius-small: 9px
+                    token-size-radius-medium: 16px
+                    token-size-radius-large: 18px
+                    token-size-radius-card: var(--token-size-radius-large)
+                    token-size-width-border-card: 0
+                    token-size-height-slider: 4px
+                    token-size-height-navbar: 56px
+                    token-size-font-title: 28px
+
+                    # Weight tokens
+                    token-weight-font-title: 600
+
+                    ##############################################################################
+                    # Definitions
+
+                    # Shapes
+                    mdc-shape-small: var(--token-size-radius-small)
+                    mdc-shape-medium: var(--token-size-radius-medium)
+                    mdc-shape-large: var(--token-size-radius-large)
+
+                    # Sizes
+                    header-height: var(--token-size-height-navbar)
+                    paper-slider-height: var(--token-size-height-slider)
+
+                    # Typography
+                    primary-font-family: var(--token-font-family-primary)
+                    paper-font-common-base_-_font-family: var(--token-font-family-primary)
+                    paper-font-common-code_-_font-family: var(--token-font-family-primary)
+                    paper-font-body1_-_font-family: var(--token-font-family-primary)
+                    paper-font-subhead_-_font-family: var(--token-font-family-primary)
+                    paper-font-headline_-_font-family: var(--token-font-family-primary)
+                    paper-font-caption_-_font-family: var(--token-font-family-primary)
+                    paper-font-title_-_font-family: var(--token-font-family-primary)
+                    ha-card-header-font-family: var(--token-font-family-primary)
+                    mdc-typography-font-family: var(--token-font-family-primary)
+                    mdc-typography-button-font-family: var(--token-font-family-primary)
+                    mdc-typography-body1-font-family: var(--token-font-family-primary)
+                    mdc-typography-button-font-weight: var(--token-weight-font-title)
+
+                    title-font-weight: var(--token-weight-font-title)
+                    title-font-size: var(--token-size-font-title)
+
+                    # Text
+                    primary-text-color: var(--token-color-text-primary)
+                    secondary-text-color: var(--token-color-text-secondary)
+                    text-primary-color: var(--token-color-text-primary)
+                    text-light-primary-color: var(--token-color-text-primary)
+                    disabled-text-color: var(--token-color-text-disabled)
+                    app-header-edit-text-color: var(--token-color-text-primary)
+
+                    # Main interface colors
+                    primary-color: var(--token-color-primary)
+                    dark-primary-color: var(--primary-color)
+                    light-primary-color: var(--primary-color)
+                    accent-color: var(--token-color-accent)
+                    divider-color: var(--token-color-background-divider)
+                    scrollbar-thumb-color: var(--token-color-background-scrollbar-thumb)
+
+                    # Feedback colors
+                    error-color: rgb(234, 114, 135)
+                    warning-color: rgb(255, 219, 117)
+                    success-color: rgb(118, 214, 152)
+                    info-color: rgb(39, 209, 246)
+
+                    # Background
+                    lovelace-background: var(--token-color-background-base)
+                    background-color: var(--token-color-background-base)
+                    primary-background-color: var(--token-color-background-base)
+                    secondary-background-color: var(--token-color-background-secondary)
+
+                    # Navbar
+                    app-header-background-color: var(--primary-background-color)
+                    app-header-text-color: var(--token-color-icon-primary)
+                    app-header-edit-background-color: var(--token-color-background-card)
+
+                    # Sidebar
+                    sidebar-icon-color: var(--token-color-icon-sidebar)
+                    sidebar-text-color: var(--sidebar-icon-color)
+                    sidebar-background-color: var(--token-color-background-sidebar)
+                    sidebar-selected-icon-color: var(--token-color-icon-sidebar-selected)
+                    sidebar-selected-text-color: var(--token-color-text-sidebar-selected)
+
+                    # Cards
+                    border-radius: var(--token-size-radius-card)
+                    card-background-color: var(--token-color-background-card)
+                    ha-card-background: var(--token-color-background-card)
+                    ha-card-border-radius: var(--token-size-radius-card)
+                    ha-card-border-color: var(--token-color-border-card)
+                    ha-card-border-width: var(--token-size-width-border-card)
+                    ha-card-border-style: none
+                    ha-card-border: none
+                    ha-card-box-shadow: none
+
+                    # States
+                    state-icon-color: var(--token-color-icon-primary)
+                    state-on-color: var(--token-color-feedback-success)
+                    state-off-color: var(--token-color-feedback-error)
+
+                    # Label-badge
+                    label-badge-text-color: var(--token-color-text-primary)
+                    label-badge-red: var(--token-color-background-label-badge-red)
+                    label-badge-blue: var(--token-color-background-label-badge-blue)
+                    label-badge-green: var(--token-color-background-label-badge-green)
+                    label-badge-yellow: var(--token-color-background-label-badge-yellow)
+                    label-badge-grey: var(--token-color-background-label-badge-grey)
+
+                    # Chip
+                    ha-chip-text-color: rgb(0, 0, 0)
+
+                    # Dialog
+                    mdc-dialog-scrim-color: var(--token-color-background-popup-scrim)
+
+                    # Slider
+                    paper-slider-knob-color: var(--token-color-primary)
+                    paper-slider-knob-start-color: var(--paper-slider-knob-color)
+                    paper-slider-pin-color: var(--paper-slider-knob-color)
+                    paper-slider-active-color: var(--paper-slider-knob-color)
+                    paper-slider-secondary-color: var(--light-primary-color)
+
+                    # Switch
+                    switch-checked-button-color: var(--primary-color)
+                    switch-checked-track-color: var(--switch-checked-button-color)
+                    switch-unchecked-button-color: rgba(0, 0, 0, 0.5)
+                    switch-unchecked-track-color: rgba(0, 0, 0, 0.25)
+
+                    # Toggles
+                    paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
+                    paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
+                    paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
+                    paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
+                    mdc-checkbox-unchecked-color: var(--token-color-icon-secondary)
+                    mdc-radio-unchecked-color: var(--mdc-checkbox-unchecked-color)
+
+                    # List items
+                    mdc-ripple-hover-opacity: var(--token-opacity-ripple-hover)
+
+                    # Text Fields an Dropdown
+                    input-background-color: var(--token-color-background-input-base)
+                    input-background-token-color-disabled: rgba(var(--input-background-color), 0.5)
+                    input-fill-color: var(--input-background-color)
+                    input-ink-color: var(--token-color-text-primary)
+                    input-label-ink-color: var(--token-color-text-primary)
+                    input-disabled-fill-color: var(--input-background-token-color-disabled)
+                    input-disabled-ink-color: var(--disabled-text-color)
+                    input-disabled-label-ink-color: var(--disabled-text-color)
+                    input-idle-line-color: var(--background-color)
+                    input-dropdown-icon-color: var(--secondary-text-color)
+                    input-hover-line-color: var(--primary-color)
+                    mdc-select-idle-line-color: var(--color-background-base)
+                    mdc-text-field-idle-line-color: var(--mdc-select-idle-line-color)
+
+                    # Editor
+                    code-editor-background-color: var(--token-color-background-base)
+                    codemirror-meta: var(--token-color-text-primary)
+                    codemirror-property: var(--accent-color)
+                    codemirror-atom: var(--codemirror-property)
+                    codemirror-string: rgb(0, 77, 153)
+                    codemirror-keyword: rgb(70, 112, 216)
+                    codemirror-number: rgb(204, 85, 0)
+
+                    # RGB colors
+                    rgb-primary-color: var(--token-rgb-primary)
+                    rgb-accent-color: var(--token-rgb-primary)
+                    rgb-white-color: 255, 255, 255
+                    rgb-purple-color: 129, 45, 250
+                    rgb-pink-color: 204, 0, 136
+                    rgb-red-color: 204, 0, 51
+                    rgb-deep-purple-color: 98, 0, 234
+                    rgb-indigo-color: 48, 63, 159
+                    rgb-blue-color: 33, 150, 243
+                    rgb-light-blue-color: 3, 169, 244
+                    rgb-cyan-color: 0, 188, 212
+                    rgb-teal-color: 0, 150, 136
+                    rgb-green-color: 56, 142, 60
+                    rgb-light-green-color: 139, 195, 74
+                    rgb-lime-color: 205, 220, 57
+                    rgb-yellow-color: 255, 235, 59
+                    rgb-amber-color: 255, 193, 7
+                    rgb-orange-color: var(--rgb-primary-color)
+                    rgb-deep-orange-color: 255, 87, 34
+                    rgb-brown-color: 121, 85, 72
+                    rgb-grey-color: 158, 158, 158
+                    rgb-blue-grey-color: 96, 125, 139
+                    rgb-black-color: 0, 0, 0
+                    rgb-disabled-color: 189, 189, 189
+                    rgb-state-inactive-color: 176, 190, 197
+
+                    ##############################################################################
+                    # Extentions
+
+                    # HACS
+                    hacs-new-color: rgb(27, 153, 123)
+                    hacs-error-color: rgb(182, 46, 95)
+
+                    # Mini graph card
+                    mcg-title-font-weight: 400
+
+                    # Mushroom
+                    mush-title-font-weight: var(--title-font-weight)
+                    mush-title-font-size: var(--title-font-size)
+                    mush-rgb-white: var(--rgb-white-color)
+                    mush-rgb-purple: var(--rgb-purple-color)
+                    mush-rgb-pink: var(--rgb-pink-color)
+                    mush-rgb-red: var(--rgb-red-color)
+                    mush-rgb-deep-purple: var(--rgb-deep-purple-color)
+                    mush-rgb-indigo: var(--rgb-indigo-color)
+                    mush-rgb-blue: var(--rgb-blue-color)
+                    mush-rgb-light-blue: var(--rgb-light-blue-color)
+                    mush-rgb-cyan: var(--rgb-cyan-color)
+                    mush-rgb-teal: var(--rgb-teal-color)
+                    mush-rgb-green: var(--rgb-green-color)
+                    mush-rgb-light-green: var(--rgb-light-green-color)
+                    mush-rgb-lime: var(--rgb-lime-color)
+                    mush-rgb-yellow: var(--rgb-yellow-color)
+                    mush-rgb-amber: var(--rgb-amber-color)
+                    mush-rgb-orange: var(--rgb-orange-color)
+                    mush-rgb-deep-orange: var(--rgb-deep-orange-color)
+                    mush-rgb-brown: var(--rgb-brown-color)
+                    mush-rgb-grey: var(--rgb-grey-color)
+                    mush-rgb-blue-grey: var(--rgb-blue-grey-color)
+                    mush-rgb-black: var(--rgb-black-color)
+                    mush-rgb-disabled: var(--rgb-disabled-color)
 automation: !include {AUTOMATION_CONFIG_PATH}
 script: !include {SCRIPT_CONFIG_PATH}
 scene: !include {SCENE_CONFIG_PATH}
@@ -442,7 +1611,7 @@ def _write_default_config(config_dir: str) -> bool:
 
 
 async def async_hass_config_yaml(hass: HomeAssistant) -> dict:
-    """Load YAML from a Home Assistant configuration file.
+    """Load YAML from a Vioneta Agro configuration file.
 
     This function allows a component inside the asyncio loop to reload its
     configuration by itself. Include package merge.
@@ -681,7 +1850,7 @@ def find_annotation(
 
 
 def _relpath(hass: HomeAssistant, path: str) -> str:
-    """Return path relative to the Home Assistant config dir."""
+    """Return path relative to the Vioneta Agro config dir."""
     return os.path.relpath(path, hass.config.config_dir)
 
 
@@ -1669,7 +2838,7 @@ def config_without_domain(config: ConfigType, domain: str) -> ConfigType:
 
 
 async def async_check_ha_config_file(hass: HomeAssistant) -> str | None:
-    """Check if Home Assistant configuration file is valid.
+    """Check if Vioneta Agro configuration file is valid.
 
     This method is a coroutine.
     """

@@ -96,7 +96,7 @@ class OverkizExecutor:
             exec_id = await self.coordinator.client.execute_command(
                 self.device.device_url,
                 Command(command_name, parameters),
-                "Home Assistant",
+                "Vioneta Agro",
             )
         # Catch Overkiz exceptions to support `continue_on_error` functionality
         except OverkizException as exception:
@@ -116,7 +116,7 @@ class OverkizExecutor:
         """Cancel running execution by command."""
 
         # Cancel a running execution
-        # Retrieve executions initiated via Home Assistant from Data Update Coordinator queue
+        # Retrieve executions initiated via Vioneta Agro from Data Update Coordinator queue
         exec_id = next(
             (
                 exec_id
@@ -132,7 +132,7 @@ class OverkizExecutor:
             await self.async_cancel_execution(exec_id)
             return True
 
-        # Retrieve executions initiated outside Home Assistant via API
+        # Retrieve executions initiated outside Vioneta Agro via API
         executions = cast(Any, await self.coordinator.client.get_current_executions())
         # executions.action_group is typed incorrectly in the upstream library
         # or the below code is incorrect.

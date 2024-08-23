@@ -1,4 +1,4 @@
-"""Provide an authentication layer for Home Assistant."""
+"""Provide an authentication layer for Vioneta Agro."""
 
 from __future__ import annotations
 
@@ -168,7 +168,7 @@ class AuthManagerFlowManager(
 
 
 class AuthManager:
-    """Manage the authentication for Home Assistant."""
+    """Manage the authentication for Vioneta Agro."""
 
     def __init__(
         self,

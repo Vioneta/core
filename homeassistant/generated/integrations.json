@@ -267,7 +267,7 @@
       "iot_class": "cloud_polling"
     },
     "analytics_insights": {
-      "name": "Home Assistant Analytics Insights",
+      "name": "Vioneta Agro Analytics Insights",
       "integration_type": "service",
       "config_flow": true,
       "iot_class": "cloud_polling",
@@ -1194,9 +1194,7 @@
           "name": "devolo Home Network"
         }
       },
-      "iot_standards": [
-        "zwave"
-      ]
+      "iot_standards": ["zwave"]
     },
     "dexcom": {
       "name": "Dexcom",
@@ -2423,7 +2421,7 @@
       "iot_class": "local_polling"
     },
     "hassio": {
-      "name": "Home Assistant Supervisor",
+      "name": "Vioneta Agro Supervisor",
       "integration_type": "hub",
       "config_flow": false,
       "iot_class": "local_polling"
@@ -2464,9 +2462,7 @@
     },
     "heltun": {
       "name": "HELTUN",
-      "iot_standards": [
-        "zwave"
-      ]
+      "iot_standards": ["zwave"]
     },
     "here_travel_time": {
       "name": "HERE Travel Time",
@@ -2566,9 +2562,7 @@
     },
     "homeseer": {
       "name": "HomeSeer",
-      "iot_standards": [
-        "zwave"
-      ]
+      "iot_standards": ["zwave"]
     },
     "homewizard": {
       "name": "HomeWizard Energy",
@@ -2801,10 +2795,7 @@
     },
     "inovelli": {
       "name": "Inovelli",
-      "iot_standards": [
-        "zigbee",
-        "zwave"
-      ]
+      "iot_standards": ["zigbee", "zwave"]
     },
     "inspired_shades": {
       "name": "Inspired Shades",
@@ -2835,7 +2826,7 @@
       "iot_class": "cloud_push"
     },
     "ios": {
-      "name": "Home Assistant iOS",
+      "name": "Vioneta Agro iOS",
       "integration_type": "hub",
       "config_flow": true,
       "iot_class": "cloud_push"
@@ -2930,9 +2921,7 @@
     },
     "jasco": {
       "name": "Jasco",
-      "iot_standards": [
-        "zwave"
-      ]
+      "iot_standards": ["zwave"]
     },
     "jellyfin": {
       "name": "Jellyfin",
@@ -3200,9 +3189,7 @@
     },
     "leviton": {
       "name": "Leviton",
-      "iot_standards": [
-        "zwave"
-      ]
+      "iot_standards": ["zwave"]
     },
     "lg": {
       "name": "LG",
@@ -6198,9 +6185,7 @@
     },
     "third_reality": {
       "name": "Third Reality",
-      "iot_standards": [
-        "zigbee"
-      ]
+      "iot_standards": ["zigbee"]
     },
     "thomson": {
       "name": "Thomson",
@@ -6325,9 +6310,7 @@
           "name": "Tapo"
         }
       },
-      "iot_standards": [
-        "matter"
-      ]
+      "iot_standards": ["matter"]
     },
     "traccar": {
       "name": "Traccar",
@@ -6458,9 +6441,7 @@
         "ultraloq": {
           "integration_type": "virtual",
           "config_flow": false,
-          "iot_standards": [
-            "zwave"
-          ],
+          "iot_standards": ["zwave"],
           "name": "Ultraloq"
         }
       }
@@ -7140,9 +7121,7 @@
     },
     "zooz": {
       "name": "Zooz",
-      "iot_standards": [
-        "zwave"
-      ]
+      "iot_standards": ["zwave"]
     },
     "zwave_js": {
       "name": "Z-Wave",

@@ -1,4 +1,4 @@
-"""Template helper methods for rendering strings with Home Assistant data."""
+"""Template helper methods for rendering strings with Vioneta Agro data."""
 
 from __future__ import annotations
 
@@ -2745,7 +2745,7 @@ class HassLoader(jinja2.BaseLoader):
 
 
 class TemplateEnvironment(ImmutableSandboxedEnvironment):
-    """The Home Assistant template environment."""
+    """The Vioneta Agro template environment."""
 
     def __init__(
         self,

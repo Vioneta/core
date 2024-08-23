@@ -1,4 +1,4 @@
-"""Plugwise Sensor component for Home Assistant."""
+"""Plugwise Sensor component for Vioneta Agro."""
 
 from __future__ import annotations
 

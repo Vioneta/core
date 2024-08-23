@@ -256,7 +256,7 @@ class StorageCollection[_ItemT, _StoreT: SerializedStorageCollection](
 
     @property
     def hass(self) -> HomeAssistant:
-        """Home Assistant object."""
+        """Vioneta Agro object."""
         return self.store.hass
 
     async def _async_load_data(self) -> _StoreT | None:

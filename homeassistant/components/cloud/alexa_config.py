@@ -1,4 +1,4 @@
-"""Alexa configuration for Home Assistant Cloud."""
+"""Alexa configuration for Vioneta Agro Cloud."""
 
 from __future__ import annotations
 

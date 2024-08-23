@@ -39,7 +39,7 @@ VALID_REPAIR_TRANSLATION_KEYS = {
 
 
 class CloudClient(Interface):
-    """Interface class for Home Assistant Cloud."""
+    """Interface class for Vioneta Agro Cloud."""
 
     def __init__(
         self,

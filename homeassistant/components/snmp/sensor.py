@@ -200,7 +200,7 @@ class SnmpSensor(ManualTriggerSensorEntity):
         self._value_template = value_template
 
     async def async_added_to_hass(self) -> None:
-        """Handle adding to Home Assistant."""
+        """Handle adding to Vioneta Agro."""
         await super().async_added_to_hass()
         await self.async_update()
 

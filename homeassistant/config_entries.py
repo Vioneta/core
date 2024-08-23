@@ -1,4 +1,4 @@
-"""Manage config entries in Home Assistant."""
+"""Manage config entries in Vioneta Agro."""
 
 from __future__ import annotations
 
@@ -375,7 +375,7 @@ class ConfigEntry(Generic[_DataT]):
             report(  # type: ignore[unreachable]
                 (
                     "uses str for config entry disabled_by. This is deprecated and will"
-                    " stop working in Home Assistant 2022.3, it should be updated to"
+                    " stop working in Vioneta Agro 2022.3, it should be updated to"
                     " use ConfigEntryDisabler instead"
                 ),
                 error_if_core=False,
@@ -444,7 +444,7 @@ class ConfigEntry(Generic[_DataT]):
                 )
             report(
                 f'sets "{key}" directly to update a config entry. This is deprecated and will'
-                " stop working in Home Assistant 2024.9, it should be updated to use"
+                " stop working in Vioneta Agro 2024.9, it should be updated to use"
                 " async_update_entry instead",
                 error_if_core=False,
             )
@@ -753,7 +753,7 @@ class ConfigEntry(Generic[_DataT]):
 
     @callback
     def async_shutdown(self) -> None:
-        """Call when Home Assistant is stopping."""
+        """Call when Vioneta Agro is stopping."""
         self.async_cancel_retry_setup()
 
     @callback
@@ -1203,7 +1203,7 @@ def _report_non_awaited_platform_forwards(entry: ConfigEntry, what: str) -> None
         f"title: {entry.title} and entry_id: {entry.entry_id}, "
         f"during setup without awaiting {what}, which can cause "
         "the setup lock to be released before the setup is done. "
-        "This will stop working in Home Assistant 2025.1",
+        "This will stop working in Vioneta Agro 2025.1",
         error_if_integration=False,
         error_if_core=False,
     )
@@ -1288,7 +1288,7 @@ class ConfigEntriesFlowManager(data_entry_flow.FlowManager[ConfigFlowResult]):
             async with interrupt(
                 cancel_init_future,
                 FlowCancelledError,
-                "Config entry initialize canceled: Home Assistant is shutting down",
+                "Config entry initialize canceled: Vioneta Agro is shutting down",
             ):
                 flow, result = await self._async_init(flow_id, handler, context, data)
         except FlowCancelledError as ex:
@@ -1800,7 +1800,7 @@ class ConfigEntries:
 
     @callback
     def _async_shutdown(self, event: Event) -> None:
-        """Call when Home Assistant is stopping."""
+        """Call when Vioneta Agro is stopping."""
         for entry in self._entries.values():
             entry.async_shutdown()
         self.flow.async_shutdown()
@@ -1954,7 +1954,7 @@ class ConfigEntries:
             report(  # type: ignore[unreachable]
                 (
                     "uses str for config entry disabled_by. This is deprecated and will"
-                    " stop working in Home Assistant 2022.3, it should be updated to"
+                    " stop working in Vioneta Agro 2022.3, it should be updated to"
                     " use ConfigEntryDisabler instead"
                 ),
                 error_if_core=False,
@@ -2129,7 +2129,7 @@ class ConfigEntries:
         component also has related platforms, the component will have to
         forward the entry to be setup by that component.
 
-        This method is deprecated and will stop working in Home Assistant 2025.6.
+        This method is deprecated and will stop working in Vioneta Agro 2025.6.
 
         Instead, await async_forward_entry_setups as it can load
         multiple platforms at once and is more efficient since it
@@ -2139,7 +2139,7 @@ class ConfigEntries:
             "calls async_forward_entry_setup for "
             f"integration, {entry.domain} with title: {entry.title} "
             f"and entry_id: {entry.entry_id}, which is deprecated and "
-            "will stop working in Home Assistant 2025.6, "
+            "will stop working in Vioneta Agro 2025.6, "
             "await async_forward_entry_setups instead",
             error_if_core=False,
             error_if_integration=False,
@@ -2243,7 +2243,7 @@ class ConfigEntries:
         This is primarily intended for existing config entries which are loaded at
         startup, awaiting this function will block until the component and all its
         config entries are loaded.
-        Config entries which are created after Home Assistant is started can't be waited
+        Config entries which are created after Vioneta Agro is started can't be waited
         for, the function will just return if the config entry is loaded or not.
         """
         setup_done = self.hass.data.get(DATA_SETUP_DONE, {})

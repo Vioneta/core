@@ -1,4 +1,4 @@
-"""Handle manual setup of ihc resources as entities in Home Assistant."""
+"""Handle manual setup of ihc resources as entities in Vioneta Agro."""
 
 import logging
 

@@ -270,7 +270,7 @@ class Camera(HomeAccessory, PyhapCamera):  # type: ignore[misc]
     def run(self) -> None:
         """Handle accessory driver started event.
 
-        Run inside the Home Assistant event loop.
+        Run inside the Vioneta Agro event loop.
         """
         if self._char_motion_detected:
             assert self.linked_motion_sensor

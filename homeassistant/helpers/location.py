@@ -1,4 +1,4 @@
-"""Location helpers for Home Assistant."""
+"""Location helpers for Vioneta Agro."""
 
 from __future__ import annotations
 

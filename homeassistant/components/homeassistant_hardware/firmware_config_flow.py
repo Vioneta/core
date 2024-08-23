@@ -1,4 +1,4 @@
-"""Config flow for the Home Assistant SkyConnect integration."""
+"""Config flow for the Vioneta Agro SkyConnect integration."""
 
 from __future__ import annotations
 

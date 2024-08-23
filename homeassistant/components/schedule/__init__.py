@@ -1,4 +1,4 @@
-"""Support for schedules in Home Assistant."""
+"""Support for schedules in Vioneta Agro."""
 
 from __future__ import annotations
 

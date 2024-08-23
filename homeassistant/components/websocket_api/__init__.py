@@ -1,4 +1,4 @@
-"""WebSocket based API for Home Assistant."""
+"""WebSocket based API for Vioneta Agro."""
 
 from __future__ import annotations
 

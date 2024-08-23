@@ -1,4 +1,4 @@
-"""Definition and setup of the Omnilogic Sensors for Home Assistant."""
+"""Definition and setup of the Omnilogic Sensors for Vioneta Agro."""
 
 from typing import Any
 

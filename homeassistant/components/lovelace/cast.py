@@ -1,4 +1,4 @@
-"""Home Assistant Cast platform."""
+"""Vioneta Agro Cast platform."""
 
 from __future__ import annotations
 

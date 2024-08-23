@@ -72,7 +72,7 @@ SUPPORT_APPLE_TV = (
 )
 
 
-# Map features in pyatv to Home Assistant
+# Map features in pyatv to Vioneta Agro
 SUPPORT_FEATURE_MAPPING = {
     FeatureName.PlayUrl: MediaPlayerEntityFeature.BROWSE_MEDIA
     | MediaPlayerEntityFeature.PLAY_MEDIA,

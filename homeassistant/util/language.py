@@ -1,4 +1,4 @@
-"""Helper methods for language selection in Home Assistant."""
+"""Helper methods for language selection in Vioneta Agro."""
 
 from __future__ import annotations
 

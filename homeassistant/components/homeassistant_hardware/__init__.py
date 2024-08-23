@@ -1,4 +1,4 @@
-"""The Home Assistant Hardware integration."""
+"""The Vioneta Agro Hardware integration."""
 
 from __future__ import annotations
 

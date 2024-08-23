@@ -401,8 +401,8 @@ class KodiEntity(MediaPlayerEntity):
                 )
             )
 
-        # If Home Assistant is already in a running state, start the watchdog
-        # immediately, else trigger it after Home Assistant has finished starting.
+        # If Vioneta Agro is already in a running state, start the watchdog
+        # immediately, else trigger it after Vioneta Agro has finished starting.
         if self.hass.state is CoreState.running:
             await start_watchdog()
         else:

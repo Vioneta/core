@@ -49,7 +49,7 @@ async def async_setup_entry(
 
 
 class TradfriLight(TradfriBaseEntity, LightEntity):
-    """The platform class required by Home Assistant."""
+    """The platform class required by Vioneta Agro."""
 
     _attr_name = None
     _attr_supported_features = LightEntityFeature.TRANSITION

@@ -1,4 +1,4 @@
-"""Sensor that can display the current Home Assistant versions."""
+"""Sensor that can display the current Vioneta Agro versions."""
 
 from __future__ import annotations
 

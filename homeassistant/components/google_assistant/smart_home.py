@@ -318,8 +318,8 @@ async def async_devices_identify(
             "isProxy": True,
             "deviceInfo": {
                 "hwVersion": "UNKNOWN_HW_VERSION",
-                "manufacturer": "Home Assistant",
-                "model": "Home Assistant",
+                "manufacturer": "Vioneta Agro",
+                "model": "Vioneta Agro",
                 "swVersion": __version__,
             },
         }

@@ -1,4 +1,4 @@
-"""Helper class to convert between Home Assistant and ESPHome enum values."""
+"""Helper class to convert between Vioneta Agro and ESPHome enum values."""
 
 from typing import overload
 

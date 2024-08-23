@@ -36,7 +36,7 @@ from .const import DATA_BROKERS, DOMAIN
 
 
 class Map(NamedTuple):
-    """Tuple for mapping Smartthings capabilities to Home Assistant sensors."""
+    """Tuple for mapping Smartthings capabilities to Vioneta Agro sensors."""
 
     attribute: str
     name: str

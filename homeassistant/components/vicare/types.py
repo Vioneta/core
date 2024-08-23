@@ -33,7 +33,7 @@ class HeatingProgram(enum.StrEnum):
 
     @staticmethod
     def to_ha_preset(program: str) -> str | None:
-        """Return the mapped Home Assistant preset for the ViCare heating program."""
+        """Return the mapped Vioneta Agro preset for the ViCare heating program."""
 
         try:
             heating_program = HeatingProgram(program)
@@ -46,7 +46,7 @@ class HeatingProgram(enum.StrEnum):
     def from_ha_preset(
         ha_preset: str, supported_heating_programs: list[str]
     ) -> str | None:
-        """Return the mapped ViCare heating program for the Home Assistant preset."""
+        """Return the mapped ViCare heating program for the Vioneta Agro preset."""
         for program in supported_heating_programs:
             if VICARE_TO_HA_PRESET_HEATING.get(HeatingProgram(program)) == ha_preset:
                 return program
@@ -74,7 +74,7 @@ class VentilationMode(enum.StrEnum):
 
     @staticmethod
     def to_vicare_mode(mode: str | None) -> str | None:
-        """Return the mapped ViCare ventilation mode for the Home Assistant mode."""
+        """Return the mapped ViCare ventilation mode for the Vioneta Agro mode."""
         if mode:
             try:
                 ventilation_mode = VentilationMode(mode)
@@ -86,7 +86,7 @@ class VentilationMode(enum.StrEnum):
 
     @staticmethod
     def from_vicare_mode(vicare_mode: str | None) -> str | None:
-        """Return the mapped Home Assistant mode for the ViCare ventilation mode."""
+        """Return the mapped Vioneta Agro mode for the ViCare ventilation mode."""
         for mode in VentilationMode:
             if HA_TO_VICARE_MODE_VENTILATION.get(VentilationMode(mode)) == vicare_mode:
                 return mode

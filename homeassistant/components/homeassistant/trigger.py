@@ -1,4 +1,4 @@
-"""Home Assistant trigger dispatcher."""
+"""Vioneta Agro trigger dispatcher."""
 
 from typing import cast
 

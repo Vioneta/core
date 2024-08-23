@@ -1,4 +1,4 @@
-"""Offer Home Assistant core automation rules."""
+"""Offer Vioneta Agro core automation rules."""
 
 import voluptuous as vol
 
@@ -40,7 +40,7 @@ async def async_attach_trigger(
                     **trigger_data,
                     "platform": DOMAIN,
                     "event": event,
-                    "description": "Home Assistant stopping",
+                    "description": "Vioneta Agro stopping",
                 }
             },
         )
@@ -55,7 +55,7 @@ async def async_attach_trigger(
                     **trigger_data,
                     "platform": DOMAIN,
                     "event": event,
-                    "description": "Home Assistant starting",
+                    "description": "Vioneta Agro starting",
                 }
             },
         )

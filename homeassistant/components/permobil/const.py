@@ -2,7 +2,7 @@
 
 DOMAIN = "permobil"
 
-APPLICATION = "Home Assistant"
+APPLICATION = "Vioneta Agro"
 
 
 BATTERY_ASSUMED_VOLTAGE = 25.0  # This is the average voltage over all states of charge

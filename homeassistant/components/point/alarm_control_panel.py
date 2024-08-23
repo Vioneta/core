@@ -52,7 +52,7 @@ async def async_setup_entry(
 
 
 class MinutPointAlarmControl(AlarmControlPanelEntity):
-    """The platform class required by Home Assistant."""
+    """The platform class required by Vioneta Agro."""
 
     _attr_supported_features = AlarmControlPanelEntityFeature.ARM_AWAY
     _attr_code_arm_required = False

@@ -1,4 +1,4 @@
-"""Handle the frontend for Home Assistant."""
+"""Handle the frontend for Vioneta Agro."""
 
 from __future__ import annotations
 
@@ -188,8 +188,8 @@ MANIFEST_JSON = Manifest(
             }
         ],
         "lang": "en-US",
-        "name": "Home Assistant",
-        "short_name": "Home Assistant",
+        "name": "Vioneta Agro",
+        "short_name": "Vioneta Agro",
         "start_url": "/?homescreen=1",
         "id": "/?homescreen=1",
         "theme_color": DEFAULT_THEME_COLOR,

@@ -1,4 +1,4 @@
-"""Config flow for the Home Assistant Yellow integration."""
+"""Config flow for the Vioneta Agro Yellow integration."""
 
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ STEP_HW_SETTINGS_SCHEMA = vol.Schema(
 
 
 class HomeAssistantYellowConfigFlow(ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for Home Assistant Yellow."""
+    """Handle a config flow for Vioneta Agro Yellow."""
 
     VERSION = 1
 
@@ -53,11 +53,11 @@ class HomeAssistantYellowConfigFlow(ConfigFlow, domain=DOMAIN):
         if self._async_current_entries():
             return self.async_abort(reason="single_instance_allowed")
 
-        return self.async_create_entry(title="Home Assistant Yellow", data={})
+        return self.async_create_entry(title="Vioneta Agro Yellow", data={})
 
 
 class HomeAssistantYellowOptionsFlow(silabs_multiprotocol_addon.OptionsFlowHandler):
-    """Handle an option flow for Home Assistant Yellow."""
+    """Handle an option flow for Vioneta Agro Yellow."""
 
     _hw_settings: dict[str, bool] | None = None
 
@@ -163,4 +163,4 @@ class HomeAssistantYellowOptionsFlow(silabs_multiprotocol_addon.OptionsFlowHandl
 
     def _hardware_name(self) -> str:
         """Return the name of the hardware."""
-        return "Home Assistant Yellow"
+        return "Vioneta Agro Yellow"

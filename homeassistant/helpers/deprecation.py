@@ -1,4 +1,4 @@
-"""Deprecation helpers for Home Assistant."""
+"""Deprecation helpers for Vioneta Agro."""
 
 from __future__ import annotations
 

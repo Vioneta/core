@@ -120,7 +120,7 @@ class Blueprint:
 
     @callback
     def validate(self) -> list[str] | None:
-        """Test if the Home Assistant installation supports this blueprint.
+        """Test if the Vioneta Agro installation supports this blueprint.
 
         Return list of errors if not valid.
         """
@@ -131,7 +131,7 @@ class Blueprint:
         if min_version is not None and AwesomeVersion(__version__) < AwesomeVersion(
             min_version
         ):
-            errors.append(f"Requires at least Home Assistant {min_version}")
+            errors.append(f"Requires at least Vioneta Agro {min_version}")
 
         return errors or None
 

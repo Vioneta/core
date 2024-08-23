@@ -1,4 +1,4 @@
-"""Utility functions for Home Assistant SkyConnect integration."""
+"""Utility functions for Vioneta Agro SkyConnect integration."""
 
 from __future__ import annotations
 

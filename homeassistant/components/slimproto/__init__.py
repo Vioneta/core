@@ -26,7 +26,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     # setup event listeners
     async def on_hass_stop(event: Event) -> None:
-        """Handle incoming stop event from Home Assistant."""
+        """Handle incoming stop event from Vioneta Agro."""
         await slimserver.stop()
 
     entry.async_on_unload(

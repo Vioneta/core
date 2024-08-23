@@ -1,6 +1,6 @@
-"""Core components of Home Assistant.
+"""Core components of Vioneta Agro.
 
-Home Assistant is a Home Automation framework for observing the state
+Vioneta Agro is a Home Automation framework for observing the state
 of entities and react to changes.
 """
 
@@ -183,7 +183,7 @@ class EventStateReportedData(EventStateEventData):
     old_last_reported: datetime.datetime
 
 
-# SOURCE_* are deprecated as of Home Assistant 2022.2, use ConfigSource instead
+# SOURCE_* are deprecated as of Vioneta Agro 2022.2, use ConfigSource instead
 _DEPRECATED_SOURCE_DISCOVERED = DeprecatedConstantEnum(
     ConfigSource.DISCOVERED, "2025.1"
 )
@@ -391,7 +391,7 @@ def get_hassjob_callable_job_type(target: Callable[..., Any]) -> HassJobType:
 
 
 class CoreState(enum.Enum):
-    """Represent the current state of Home Assistant."""
+    """Represent the current state of Vioneta Agro."""
 
     not_running = "NOT_RUNNING"
     starting = "STARTING"
@@ -406,7 +406,7 @@ class CoreState(enum.Enum):
 
 
 class HomeAssistant:
-    """Root object of the Home Assistant home automation."""
+    """Root object of the Vioneta Agro home automation."""
 
     auth: AuthManager
     http: HomeAssistantHTTP = None  # type: ignore[assignment]
@@ -423,7 +423,7 @@ class HomeAssistant:
         return f"<HomeAssistant {self.state}>"
 
     def __init__(self, config_dir: str) -> None:
-        """Initialize new Home Assistant object."""
+        """Initialize new Vioneta Agro object."""
         # pylint: disable-next=import-outside-toplevel
         from . import loader
 
@@ -476,12 +476,12 @@ class HomeAssistant:
 
     @cached_property
     def is_running(self) -> bool:
-        """Return if Home Assistant is running."""
+        """Return if Vioneta Agro is running."""
         return self.state in (CoreState.starting, CoreState.running)
 
     @cached_property
     def is_stopping(self) -> bool:
-        """Return if Home Assistant is stopping."""
+        """Return if Vioneta Agro is stopping."""
         return self.state in (CoreState.stopping, CoreState.final_write)
 
     def set_state(self, state: CoreState) -> None:
@@ -491,7 +491,7 @@ class HomeAssistant:
             self.__dict__.pop(prop, None)
 
     def start(self) -> int:
-        """Start Home Assistant.
+        """Start Vioneta Agro.
 
         Note: This function is only used for testing.
         For regular use, use "await hass.run()".
@@ -500,7 +500,7 @@ class HomeAssistant:
         _future = asyncio.run_coroutine_threadsafe(self.async_start(), self.loop)
         # Run forever
         # Block until stopped
-        _LOGGER.info("Starting Home Assistant core loop")
+        _LOGGER.info("Starting Vioneta Agro core loop")
         self.loop.run_forever()
         # The future is never retrieved but we still hold a reference to it
         # to prevent the task from being garbage collected prematurely.
@@ -508,14 +508,14 @@ class HomeAssistant:
         return self.exit_code
 
     async def async_run(self, *, attach_signals: bool = True) -> int:
-        """Home Assistant main entry point.
+        """Vioneta Agro main entry point.
 
-        Start Home Assistant and block until stopped.
+        Start Vioneta Agro and block until stopped.
 
         This method is a coroutine.
         """
         if self.state is not CoreState.not_running:
-            raise RuntimeError("Home Assistant is already running")
+            raise RuntimeError("Vioneta Agro is already running")
 
         # _async_stop will set this instead of stopping the loop
         self._stopped = asyncio.Event()
@@ -535,7 +535,7 @@ class HomeAssistant:
 
         This method is a coroutine.
         """
-        _LOGGER.info("Starting Home Assistant")
+        _LOGGER.info("Starting Vioneta Agro")
 
         self.set_state(CoreState.starting)
         self.bus.async_fire_internal(EVENT_CORE_CONFIG_UPDATE)
@@ -551,7 +551,7 @@ class HomeAssistant:
         if pending:
             _LOGGER.warning(
                 (
-                    "Something is blocking Home Assistant from wrapping up the start up"
+                    "Something is blocking Vioneta Agro from wrapping up the start up"
                     " phase. We're going to continue anyway. Please report the"
                     " following info at"
                     " https://github.com/home-assistant/core/issues: %s"
@@ -566,7 +566,7 @@ class HomeAssistant:
 
         if self.state is not CoreState.starting:
             _LOGGER.warning(
-                "Home Assistant startup has been interrupted. "
+                "Vioneta Agro startup has been interrupted. "
                 "Its state may be inconsistent"
             )
             return
@@ -845,7 +845,7 @@ class HomeAssistant:
         """Create a task from within the event loop.
 
         This type of task is for background tasks that usually run for
-        the lifetime of Home Assistant or an integration's setup.
+        the lifetime of Vioneta Agro or an integration's setup.
 
         A background task is different from a normal task:
 
@@ -1075,7 +1075,7 @@ class HomeAssistant:
         return remove_job
 
     def stop(self) -> None:
-        """Stop Home Assistant and shuts down all threads."""
+        """Stop Vioneta Agro and shuts down all threads."""
         if self.state is CoreState.not_running:  # just ignore
             return
         # The future is never retrieved, and we only hold a reference
@@ -1085,10 +1085,10 @@ class HomeAssistant:
         )
 
     async def async_stop(self, exit_code: int = 0, *, force: bool = False) -> None:
-        """Stop Home Assistant and shuts down all threads.
+        """Stop Vioneta Agro and shuts down all threads.
 
         The "force" flag commands async_stop to proceed regardless of
-        Home Assistant's current state. You should not set this flag
+        Vioneta Agro's current state. You should not set this flag
         unless you're testing.
 
         This method is a coroutine.
@@ -1104,7 +1104,7 @@ class HomeAssistant:
             if self.state is CoreState.starting:
                 # This may not work
                 _LOGGER.warning(
-                    "Stopping Home Assistant before startup has completed may fail"
+                    "Stopping Vioneta Agro before startup has completed may fail"
                 )
 
         # Stage 1 - Run shutdown jobs
@@ -1139,7 +1139,7 @@ class HomeAssistant:
         for task in self._background_tasks:
             self._tasks.add(task)
             task.add_done_callback(self._tasks.remove)
-            task.cancel("Home Assistant is stopping")
+            task.cancel("Vioneta Agro is stopping")
         self._cancel_cancellable_timers()
 
         self.exit_code = exit_code
@@ -1188,7 +1188,7 @@ class HomeAssistant:
                 "the stop event to prevent delaying shutdown",
                 task,
             )
-            task.cancel("Home Assistant final writes shutdown stage")
+            task.cancel("Vioneta Agro final writes shutdown stage")
             try:
                 async with asyncio.timeout(0.1):
                     await task
@@ -1614,7 +1614,7 @@ class EventBus:
 
             frame.report(
                 "calls `async_listen` with run_immediately, which is"
-                " deprecated and will be removed in Home Assistant 2025.5",
+                " deprecated and will be removed in Vioneta Agro 2025.5",
                 error_if_core=False,
             )
 
@@ -1684,7 +1684,7 @@ class EventBus:
 
             frame.report(
                 "calls `async_listen_once` with run_immediately, which is "
-                "deprecated and will be removed in Home Assistant 2025.5",
+                "deprecated and will be removed in Vioneta Agro 2025.5",
                 error_if_core=False,
             )
 
@@ -2471,7 +2471,7 @@ class ServiceRegistry:
         """Return dictionary with per domain a list of available services.
 
         This method DOES NOT make a copy of the services like async_services does.
-        It is only expected to be called from the Home Assistant internals
+        It is only expected to be called from the Vioneta Agro internals
         as a performance optimization when the caller is not going to modify the
         returned data.
 
@@ -2860,7 +2860,7 @@ class _ComponentSet(set[str]):
 
 
 class Config:
-    """Configuration settings for Home Assistant."""
+    """Configuration settings for Vioneta Agro."""
 
     _store: Config._ConfigStore
 
@@ -2927,13 +2927,13 @@ class Config:
         # Dictionary of Media folders that integrations may use
         self.media_dirs: dict[str, str] = {}
 
-        # If Home Assistant is running in recovery mode
+        # If Vioneta Agro is running in recovery mode
         self.recovery_mode: bool = False
 
         # Use legacy template behavior
         self.legacy_templates: bool = False
 
-        # If Home Assistant is running in safe mode
+        # If Vioneta Agro is running in safe mode
         self.safe_mode: bool = False
 
     def async_initialize(self) -> None:
@@ -2944,7 +2944,7 @@ class Config:
         self._store = self._ConfigStore(self.hass)
 
     def distance(self, lat: float, lon: float) -> float | None:
-        """Calculate distance from Home Assistant.
+        """Calculate distance from Vioneta Agro.
 
         Async friendly.
         """
@@ -3045,14 +3045,14 @@ class Config:
         This is a legacy method that should not be used in new code.
         Use async_set_time_zone instead.
 
-        It will be removed in Home Assistant 2025.6.
+        It will be removed in Vioneta Agro 2025.6.
         """
         # report is imported here to avoid a circular import
         from .helpers.frame import report  # pylint: disable=import-outside-toplevel
 
         report(
             "set the time zone using set_time_zone instead of async_set_time_zone"
-            " which will stop working in Home Assistant 2025.6",
+            " which will stop working in Vioneta Agro 2025.6",
             error_if_core=True,
             error_if_integration=True,
         )

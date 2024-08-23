@@ -114,7 +114,7 @@ class EntityComponent(Generic[_EntityT]):
         return self._entities.get(entity_id)  # type: ignore[return-value]
 
     def register_shutdown(self) -> None:
-        """Register shutdown on Home Assistant STOP event.
+        """Register shutdown on Vioneta Agro STOP event.
 
         Note: this is only required if the integration never calls
         `setup` or `async_setup`.
@@ -401,6 +401,6 @@ class EntityComponent(Generic[_EntityT]):
 
     @callback
     def _async_shutdown(self, event: Event) -> None:
-        """Call when Home Assistant is stopping."""
+        """Call when Vioneta Agro is stopping."""
         for platform in self._platforms.values():
             platform.async_shutdown()

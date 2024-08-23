@@ -362,7 +362,7 @@ class SqueezeBoxEntity(MediaPlayerEntity):
     @property
     def shuffle(self):
         """Boolean if shuffle is enabled."""
-        # Squeezebox has a third shuffle mode (album) not recognized by Home Assistant
+        # Squeezebox has a third shuffle mode (album) not recognized by Vioneta Agro
         return self._player.shuffle == "song"
 
     @property

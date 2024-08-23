@@ -3,7 +3,7 @@
 from homeassistant.const import Platform
 
 DOMAIN = "blink"
-DEVICE_ID = "Home Assistant"
+DEVICE_ID = "Vioneta Agro"
 
 CONF_MIGRATE = "migrate"
 CONF_CAMERA = "camera"

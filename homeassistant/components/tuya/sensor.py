@@ -1233,7 +1233,7 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
             self._type = self.get_dptype(DPCode(description.key))
 
         # Logic to ensure the set device class and API received Unit Of Measurement
-        # match Home Assistants requirements.
+        # match Vioneta Agros requirements.
         if (
             self.device_class is not None
             and not self.device_class.startswith(DOMAIN)

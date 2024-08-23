@@ -1,4 +1,4 @@
-"""The Home Assistant alerts integration."""
+"""The Vioneta Agro alerts integration."""
 
 from __future__ import annotations
 

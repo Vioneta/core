@@ -200,7 +200,7 @@ class EntityPlatform:
           to that number.
 
         The default value for parallel requests is decided based on the first
-        entity of the platform which is added to Home Assistant. It's 1 if the
+        entity of the platform which is added to Vioneta Agro. It's 1 if the
         entity implements the update method, else it's 0.
         """
         if self.parallel_updates_created:
@@ -302,7 +302,7 @@ class EntityPlatform:
 
     @callback
     def async_shutdown(self) -> None:
-        """Call when Home Assistant is stopping."""
+        """Call when Vioneta Agro is stopping."""
         self.async_cancel_retry_setup()
         self.async_unsub_polling()
 

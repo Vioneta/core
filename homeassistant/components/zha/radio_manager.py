@@ -337,7 +337,7 @@ class ZhaMultiPANMigrationHelper:
     """Helper class for automatic migration when upgrading the firmware of a radio.
 
     This class is currently only intended to be used when changing the firmware on the
-    radio used in the Home Assistant SkyConnect USB stick and the Home Assistant Yellow
+    radio used in the Vioneta Agro SkyConnect USB stick and the Vioneta Agro Yellow
     from Zigbee only firmware to firmware supporting both Zigbee and Thread.
     """
 

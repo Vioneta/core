@@ -1,4 +1,4 @@
-"""Plugwise platform for Home Assistant Core."""
+"""Plugwise platform for Vioneta Agro Core."""
 
 from __future__ import annotations
 

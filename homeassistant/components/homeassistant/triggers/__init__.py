@@ -1,1 +1,1 @@
-"""Home Assistant triggers."""
+"""Vioneta Agro triggers."""

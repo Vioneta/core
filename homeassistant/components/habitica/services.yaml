@@ -12,6 +12,6 @@ api_call:
       selector:
         object:
     args:
-      example: '{"text": "Use API from Home Assistant", "type": "todo"}'
+      example: '{"text": "Use API from Vioneta Agro", "type": "todo"}'
       selector:
         object:

@@ -116,7 +116,7 @@ class SubaruConfigFlow(ConfigFlow, domain=DOMAIN):
         if not data.get(CONF_DEVICE_ID):
             data[CONF_DEVICE_ID] = int(now.timestamp())
         date = now.strftime("%Y-%m-%d")
-        device_name = "Home Assistant: Added " + date
+        device_name = "Vioneta Agro: Added " + date
 
         self.controller = SubaruAPI(
             websession,

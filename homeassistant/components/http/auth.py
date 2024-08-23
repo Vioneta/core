@@ -38,7 +38,7 @@ SAFE_QUERY_PARAMS: Final = ["height", "width"]
 
 STORAGE_VERSION = 1
 STORAGE_KEY = "http.auth"
-CONTENT_USER_NAME = "Home Assistant Content"
+CONTENT_USER_NAME = "Vioneta Agro Content"
 
 
 @callback

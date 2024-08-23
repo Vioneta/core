@@ -1,4 +1,4 @@
-"""Webhooks for Home Assistant."""
+"""Webhooks for Vioneta Agro."""
 
 from __future__ import annotations
 

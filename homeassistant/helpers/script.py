@@ -575,7 +575,7 @@ class _ScriptRun:
         ):
             raise exception
 
-        # Only Home Assistant errors can be ignored.
+        # Only Vioneta Agro errors can be ignored.
         if not isinstance(exception, exceptions.HomeAssistantError):
             raise exception
 
@@ -1703,9 +1703,9 @@ class Script:
             )
             context = Context()
 
-        # Prevent spawning new script runs when Home Assistant is shutting down
+        # Prevent spawning new script runs when Vioneta Agro is shutting down
         if DATA_NEW_SCRIPT_RUNS_NOT_ALLOWED in self._hass.data:
-            self._log("Home Assistant is shutting down, starting script blocked")
+            self._log("Vioneta Agro is shutting down, starting script blocked")
             return None
 
         # Prevent spawning new script runs if not allowed by script mode

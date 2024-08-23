@@ -1,4 +1,4 @@
-"""Platform to retrieve Islamic prayer times information for Home Assistant."""
+"""Platform to retrieve Islamic prayer times information for Vioneta Agro."""
 
 from datetime import datetime
 
