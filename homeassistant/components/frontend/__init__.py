@@ -158,7 +158,7 @@ MANIFEST_JSON = Manifest(
     {
         "background_color": "#FFFFFF",
         "description": (
-            "Home automation platform that puts local control and privacy first."
+            "Agriculture Automation platform that puts local control and privacy first."
         ),
         "dir": "ltr",
         "display": "standalone",
@@ -195,7 +195,7 @@ MANIFEST_JSON = Manifest(
         "theme_color": DEFAULT_THEME_COLOR,
         "prefer_related_applications": True,
         "related_applications": [
-            {"platform": "play", "id": "io.homeassistant.companion.android"}
+            {"platform": "play", "id": "io.vionetagro.companion.android"}
         ],
     }
 )

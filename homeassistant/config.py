@@ -101,52 +101,6 @@ default_config:
 # Load frontend themes from the themes folder
 frontend:
     themes:
-        Classic Vioneta:
-            modes:
-                light:
-
-                    primary-color: "#4F46E5"
-                    accent-color: "#BEF264"
-
-                    # Header
-                    app-header-background-color: "#4338CA"
-                    app-header-text-color: "#EEF2FF"
-
-                    primary-background-color: "#F1F5F9"
-                    secondary-background-color: "#E4E4E7"
-                    # Fonts
-                    primary-font-family: "Tahoma"
-                    secondary-font-family: "Trebuchet MS"
-                    paper-font-common-base_-_font-family: "var(--secondary-font-family)"
-                    paper-font-common-code_-_font-family: "var(--secondary-font-family)"
-                    paper-font-body1_-_font-family: "var(--secondary-font-family)"
-                    paper-font-subhead_-_font-family: "var(--secondary-font-family)"
-                    paper-font-headline_-_font-family: "var(--primary-font-family)"
-                    paper-font-caption_-_font-family: "var(--secondary-font-family)"
-                    paper-font-title_-_font-family: "var(--primary-font-family)"
-                    ha-card-header-font-family: "var(--primary-font-family)"
-
-                dark:
-                    primary-color: "#4338CA"
-                    accent-color: darkred
-
-                    # Header
-                    app-header-background-color: "#6D28D9"
-                    app-header-text-color: "#F9FAFB"
-
-                    primary-background-color: "#18181B"
-                    secondary-background-color: "#52525B"
-                    # Fonts
-                    primary-font-family: "Tahoma"
-                    secondary-font-family: "Trebuchet MS"
-                    paper-font-common-base_-_font-family: "var(--secondary-font-family)"
-                    paper-font-common-code_-_font-family: "var(--secondary-font-family)"
-                    paper-font-body1_-_font-family: "var(--secondary-font-family)"
-                    paper-font-subhead_-_font-family: "var(--secondary-font-family)"
-                    paper-font-headline_-_font-family: "var(--primary-font-family)"
-                    paper-font-caption_-_font-family: "var(--secondary-font-family)"
-                    paper-font-title_-_font-family: "var(--primary-font-family)"
-                    ha-card-header-font-family: "var(--primary-font-family)"
         Latte Vioneta:
             modes:
                 light:

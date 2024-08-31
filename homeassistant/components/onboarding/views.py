@@ -208,8 +208,6 @@ class CoreConfigOnboardingView(_BaseOnboardingView):
             onboard_integrations = [
                 "google_translate",
                 "met",
-                "radio_browser",
-                "shopping_list",
             ]
 
             # pylint: disable-next=import-outside-toplevel

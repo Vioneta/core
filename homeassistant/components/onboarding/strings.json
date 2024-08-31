@@ -1,9 +1,5 @@
 {
-  "area": {
-    "living_room": "Living Room",
-    "bedroom": "Bedroom",
-    "kitchen": "Kitchen"
-  },
+  "area": {},
   "dashboard": {
     "map": { "title": "Map" }
   }

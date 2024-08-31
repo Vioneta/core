@@ -2881,7 +2881,7 @@ class Config:
         """Radius of the Home Zone (always in meters regardless of the unit system)."""
 
         self.debug: bool = False
-        self.location_name: str = "Home"
+        self.location_name: str = "Farm"
         self.time_zone: str = "UTC"
         self.units: UnitSystem = METRIC_SYSTEM
         self.internal_url: str | None = None
