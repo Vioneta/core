@@ -1,16 +1,16 @@
-image: ghcr.io/home-assistant/{machine}-homeassistant
+image: ghcr.io/vioneta/{machine}-vionetaos
 build_from:
-  aarch64: "ghcr.io/home-assistant/aarch64-homeassistant:"
-  armv7: "ghcr.io/home-assistant/armv7-homeassistant:"
-  armhf: "ghcr.io/home-assistant/armhf-homeassistant:"
-  amd64: "ghcr.io/home-assistant/amd64-homeassistant:"
-  i386: "ghcr.io/home-assistant/i386-homeassistant:"
-codenotary:
-  signer: notary@home-assistant.io
-  base_image: notary@home-assistant.io
-cosign:
-  base_identity: https://github.com/home-assistant/core/.*
-  identity: https://github.com/home-assistant/core/.*
+  aarch64: "ghcr.io/vioneta/aarch64-vionetaos:"
+  armv7: "ghcr.io/vioneta/armv7-vionetaos:"
+  armhf: "ghcr.io/vioneta/armhf-vionetaos:"
+  amd64: "ghcr.io/vioneta/amd64-vionetaos:"
+  i386: "ghcr.io/vioneta/i386-vionetaos:"
+# codenotary:
+#   signer: notary@home-assistant.io
+#   base_image: notary@home-assistant.io
+# cosign:
+#   base_identity: https://github.com/home-assistant/core/.*
+#   identity: https://github.com/home-assistant/core/.*
 labels:
   io.hass.type: core
-  org.opencontainers.image.source: https://github.com/home-assistant/core
+  org.opencontainers.image.source: https://github.com/Vioneta/core

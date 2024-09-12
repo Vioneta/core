@@ -18,7 +18,7 @@ env:
 jobs:
   init:
     name: Initialize build
-    if: github.repository_owner == 'home-assistant'
+    if: github.repository_owner == 'Vioneta'
     runs-on: ubuntu-latest
     outputs:
       architectures: ${{ steps.info.outputs.architectures }}
@@ -32,7 +32,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Python ${{ env.DEFAULT_PYTHON }}
-        uses: actions/setup-python@v5.1.1
+        uses: actions/setup-python@v5.1.0
         with:
           python-version: ${{ env.DEFAULT_PYTHON }}
 
@@ -51,33 +51,33 @@ jobs:
         with:
           ignore-dev: true
 
-      - name: Fail if translations files are checked in
-        run: |
-          if [ -n "$(find homeassistant/components/*/translations -type f)" ]; then
-              echo "Translations files are checked in, please remove the following files:"
-              find homeassistant/components/*/translations -type f
-              exit 1
-          fi
+      # - name: Fail if translations files are checked in
+      #   run: |
+      #     if [ -n "$(find homeassistant/components/*/translations -type f)" ]; then
+      #         echo "Translations files are checked in, please remove the following files:"
+      #         find homeassistant/components/*/translations -type f
+      #         exit 1
+      #     fi
 
-      - name: Download Translations
-        run: python3 -m script.translations download
-        env:
-          LOKALISE_TOKEN: ${{ secrets.LOKALISE_TOKEN }}
+      # - name: Download Translations
+      #   run: python3 -m script.translations download
+      #   env:
+      #     LOKALISE_TOKEN: ${{ secrets.LOKALISE_TOKEN }}
 
-      - name: Archive translations
-        shell: bash
-        run: find ./homeassistant/components/*/translations -name "*.json" | tar zcvf translations.tar.gz -T -
+      # - name: Archive translations
+      #   shell: bash
+      #   run: find ./homeassistant/components/*/translations -name "*.json" | tar zcvf translations.tar.gz -T -
 
-      - name: Upload translations
-        uses: actions/upload-artifact@v4.3.4
-        with:
-          name: translations
-          path: translations.tar.gz
-          if-no-files-found: error
+      # - name: Upload translations
+      #   uses: actions/upload-artifact@v4.3.3
+      #   with:
+      #     name: translations
+      #     path: translations.tar.gz
+      #     if-no-files-found: error
 
   build_base:
     name: Build ${{ matrix.arch }} base core image
-    if: github.repository_owner == 'home-assistant'
+    if: github.repository_owner == 'Vioneta'
     needs: init
     runs-on: ubuntu-latest
     permissions:
@@ -97,7 +97,7 @@ jobs:
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          repo: home-assistant/frontend
+          repo: Vioneta/frontend
           branch: dev
           workflow: nightly.yaml
           workflow_conclusion: success
@@ -108,7 +108,7 @@ jobs:
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          repo: home-assistant/intents-package
+          repo: Vioneta/intents-package
           branch: main
           workflow: nightly.yaml
           workflow_conclusion: success
@@ -116,7 +116,7 @@ jobs:
 
       - name: Set up Python ${{ env.DEFAULT_PYTHON }}
         if: needs.init.outputs.channel == 'dev'
-        uses: actions/setup-python@v5.1.1
+        uses: actions/setup-python@v5.1.0
         with:
           python-version: ${{ env.DEFAULT_PYTHON }}
 
@@ -131,17 +131,17 @@ jobs:
           uv pip install .
           python3 script/version_bump.py nightly --set-nightly-version "${{ needs.init.outputs.version }}"
 
-          if [[ "$(ls home_assistant_frontend*.whl)" =~ ^home_assistant_frontend-(.*)-py3-none-any.whl$ ]]; then
+          if [[ "$(ls vioneta_agro_frontend*.whl)" =~ ^vioneta_agro_frontend-(.*)-py3-none-any.whl$ ]]; then
             echo "Found frontend wheel, setting version to: ${BASH_REMATCH[1]}"
             frontend_version="${BASH_REMATCH[1]}" yq \
               --inplace e -o json \
-              '.requirements = ["home-assistant-frontend=="+env(frontend_version)]' \
+              '.requirements = ["vioneta-agro-frontend=="+env(frontend_version)]' \
               homeassistant/components/frontend/manifest.json
 
-            sed -i "s|home-assistant-frontend==.*|home-assistant-frontend==${BASH_REMATCH[1]}|" \
+            sed -i "s|vioneta-agro-frontend==.*|vioneta-agro-frontend==${BASH_REMATCH[1]}|" \
               homeassistant/package_constraints.txt
 
-            sed -i "s|home-assistant-frontend==.*||" requirements_all.txt
+            sed -i "s|vioneta-agro-frontend==.*||" requirements_all.txt
           fi
 
           if [[ "$(ls home_assistant_intents*.whl)" =~ ^home_assistant_intents-(.*)-py3-none-any.whl$ ]]; then
@@ -174,15 +174,15 @@ jobs:
           sed -i "s|pyezviz|# pyezviz|g" requirements_all.txt
           sed -i "s|pykrakenapi|# pykrakenapi|g" requirements_all.txt
 
-      - name: Download translations
-        uses: actions/download-artifact@v4.1.8
-        with:
-          name: translations
+      # - name: Download translations
+      #   uses: actions/download-artifact@v4.1.7
+      #   with:
+      #     name: translations
 
-      - name: Extract translations
-        run: |
-          tar xvf translations.tar.gz
-          rm translations.tar.gz
+      # - name: Extract translations
+      #   run: |
+      #     tar xvf translations.tar.gz
+      #     rm translations.tar.gz
 
       - name: Write meta info file
         shell: bash
@@ -190,7 +190,7 @@ jobs:
           echo "${{ github.sha }};${{ github.ref }};${{ github.event_name }};${{ github.actor }}" > rootfs/OFFICIAL_IMAGE
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3.3.0
+        uses: docker/login-action@v3.2.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -208,7 +208,7 @@ jobs:
 
   build_machine:
     name: Build ${{ matrix.machine }} machine core image
-    if: github.repository_owner == 'home-assistant'
+    if: github.repository_owner == 'Vioneta'
     needs: ["init", "build_base"]
     runs-on: ubuntu-latest
     permissions:
@@ -256,7 +256,7 @@ jobs:
           fi
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3.3.0
+        uses: docker/login-action@v3.2.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -274,7 +274,7 @@ jobs:
   publish_ha:
     name: Publish version files
     environment: ${{ needs.init.outputs.channel }}
-    if: github.repository_owner == 'home-assistant'
+    if: github.repository_owner == 'Vioneta'
     needs: ["init", "build_machine"]
     runs-on: ubuntu-latest
     steps:
@@ -288,27 +288,27 @@ jobs:
           email: ${{ secrets.GIT_EMAIL }}
           token: ${{ secrets.GIT_TOKEN }}
 
-      - name: Update version file
-        uses: home-assistant/actions/helpers/version-push@master
-        with:
-          key: "homeassistant[]"
-          key-description: "Home Assistant Core"
-          version: ${{ needs.init.outputs.version }}
-          channel: ${{ needs.init.outputs.channel }}
+      # - name: Update version file
+      #   uses: home-assistant/actions/helpers/version-push@master
+      #   with:
+      #     key: "homeassistant[]"
+      #     key-description: "Home Assistant Core"
+      #     version: ${{ needs.init.outputs.version }}
+      #     channel: ${{ needs.init.outputs.channel }}
 
-      - name: Update version file (stable -> beta)
-        if: needs.init.outputs.channel == 'stable'
-        uses: home-assistant/actions/helpers/version-push@master
-        with:
-          key: "homeassistant[]"
-          key-description: "Home Assistant Core"
-          version: ${{ needs.init.outputs.version }}
-          channel: beta
+      # - name: Update version file (stable -> beta)
+      #   if: needs.init.outputs.channel == 'stable'
+      #   uses: home-assistant/actions/helpers/version-push@master
+      #   with:
+      #     key: "homeassistant[]"
+      #     key-description: "Home Assistant Core"
+      #     version: ${{ needs.init.outputs.version }}
+      #     channel: beta
 
   publish_container:
     name: Publish meta container for ${{ matrix.registry }}
     environment: ${{ needs.init.outputs.channel }}
-    if: github.repository_owner == 'home-assistant'
+    if: github.repository_owner == 'Vioneta'
     needs: ["init", "build_base"]
     runs-on: ubuntu-latest
     permissions:
@@ -317,7 +317,7 @@ jobs:
       id-token: write
     strategy:
       matrix:
-        registry: ["ghcr.io/home-assistant", "docker.io/homeassistant"]
+        registry: ["ghcr.io/vioneta", "docker.io/vioneta"]
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4.1.7
@@ -328,15 +328,15 @@ jobs:
           cosign-release: "v2.2.3"
 
       - name: Login to DockerHub
-        if: matrix.registry == 'docker.io/homeassistant'
-        uses: docker/login-action@v3.3.0
+        if: matrix.registry == 'docker.io/vioneta'
+        uses: docker/login-action@v3.2.0
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Login to GitHub Container Registry
-        if: matrix.registry == 'ghcr.io/home-assistant'
-        uses: docker/login-action@v3.3.0
+        if: matrix.registry == 'ghcr.io/vioneta'
+        uses: docker/login-action@v3.2.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -352,74 +352,74 @@ jobs:
             local tag_r=${2}
             local registry=${{ matrix.registry }}
 
-            docker manifest create "${registry}/home-assistant:${tag_l}" \
-              "${registry}/amd64-homeassistant:${tag_r}" \
-              "${registry}/i386-homeassistant:${tag_r}" \
-              "${registry}/armhf-homeassistant:${tag_r}" \
-              "${registry}/armv7-homeassistant:${tag_r}" \
-              "${registry}/aarch64-homeassistant:${tag_r}"
+            docker manifest create "${registry}/vionetaos:${tag_l}" \
+              "${registry}/amd64-vionetaos:${tag_r}" \
+              "${registry}/i386-vionetaos:${tag_r}" \
+              "${registry}/armhf-vionetaos:${tag_r}" \
+              "${registry}/armv7-vionetaos:${tag_r}" \
+              "${registry}/aarch64-vionetaos:${tag_r}"
 
-            docker manifest annotate "${registry}/home-assistant:${tag_l}" \
-              "${registry}/amd64-homeassistant:${tag_r}" \
+            docker manifest annotate "${registry}/vionetaos:${tag_l}" \
+              "${registry}/amd64-vionetaos:${tag_r}" \
               --os linux --arch amd64
 
-            docker manifest annotate "${registry}/home-assistant:${tag_l}" \
-              "${registry}/i386-homeassistant:${tag_r}" \
+            docker manifest annotate "${registry}/vionetaos:${tag_l}" \
+              "${registry}/i386-vionetaos:${tag_r}" \
               --os linux --arch 386
 
-            docker manifest annotate "${registry}/home-assistant:${tag_l}" \
-              "${registry}/armhf-homeassistant:${tag_r}" \
+            docker manifest annotate "${registry}/vionetaos:${tag_l}" \
+              "${registry}/armhf-vionetaos:${tag_r}" \
               --os linux --arch arm --variant=v6
 
-            docker manifest annotate "${registry}/home-assistant:${tag_l}" \
-              "${registry}/armv7-homeassistant:${tag_r}" \
+            docker manifest annotate "${registry}/vionetaos:${tag_l}" \
+              "${registry}/armv7-vionetaos:${tag_r}" \
               --os linux --arch arm --variant=v7
 
-            docker manifest annotate "${registry}/home-assistant:${tag_l}" \
-              "${registry}/aarch64-homeassistant:${tag_r}" \
+            docker manifest annotate "${registry}/vionetaos:${tag_l}" \
+              "${registry}/aarch64-vionetaos:${tag_r}" \
               --os linux --arch arm64 --variant=v8
 
-            docker manifest push --purge "${registry}/home-assistant:${tag_l}"
-            cosign sign --yes "${registry}/home-assistant:${tag_l}"
+            docker manifest push --purge "${registry}/vionetaos:${tag_l}"
+            cosign sign --yes "${registry}/vionetaos:${tag_l}"
           }
 
-          function validate_image() {
-            local image=${1}
-            if ! cosign verify --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp https://github.com/home-assistant/core/.* "${image}"; then
-              echo "Invalid signature!"
-              exit 1
-            fi
-          }
+          # function validate_image() {
+          #   local image=${1}
+          #   if ! cosign verify --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp https://github.com/Vioneta/core/.* "${image}"; then
+          #     echo "Invalid signature!"
+          #     exit 1
+          #   fi
+          # }
 
           function push_dockerhub() {
             local image=${1}
             local tag=${2}
 
-            docker tag "ghcr.io/home-assistant/${image}:${tag}" "docker.io/homeassistant/${image}:${tag}"
-            docker push "docker.io/homeassistant/${image}:${tag}"
-            cosign sign --yes "docker.io/homeassistant/${image}:${tag}"
+            docker tag "ghcr.io/vioneta/${image}:${tag}" "docker.io/vioneta/${image}:${tag}"
+            docker push "docker.io/vioneta/${image}:${tag}"
+            # cosign sign --yes "docker.io/vioneta/${image}:${tag}"
           }
 
           # Pull images from github container registry and verify signature
-          docker pull "ghcr.io/home-assistant/amd64-homeassistant:${{ needs.init.outputs.version }}"
-          docker pull "ghcr.io/home-assistant/i386-homeassistant:${{ needs.init.outputs.version }}"
-          docker pull "ghcr.io/home-assistant/armhf-homeassistant:${{ needs.init.outputs.version }}"
-          docker pull "ghcr.io/home-assistant/armv7-homeassistant:${{ needs.init.outputs.version }}"
-          docker pull "ghcr.io/home-assistant/aarch64-homeassistant:${{ needs.init.outputs.version }}"
+          docker pull "ghcr.io/vioneta/amd64-vionetaos:${{ needs.init.outputs.version }}"
+          docker pull "ghcr.io/vioneta/i386-vionetaos:${{ needs.init.outputs.version }}"
+          docker pull "ghcr.io/vioneta/armhf-vionetaos:${{ needs.init.outputs.version }}"
+          docker pull "ghcr.io/vioneta/armv7-vionetaos:${{ needs.init.outputs.version }}"
+          docker pull "ghcr.io/vioneta/aarch64-vionetaos:${{ needs.init.outputs.version }}"
 
-          validate_image "ghcr.io/home-assistant/amd64-homeassistant:${{ needs.init.outputs.version }}"
-          validate_image "ghcr.io/home-assistant/i386-homeassistant:${{ needs.init.outputs.version }}"
-          validate_image "ghcr.io/home-assistant/armhf-homeassistant:${{ needs.init.outputs.version }}"
-          validate_image "ghcr.io/home-assistant/armv7-homeassistant:${{ needs.init.outputs.version }}"
-          validate_image "ghcr.io/home-assistant/aarch64-homeassistant:${{ needs.init.outputs.version }}"
+          # validate_image "ghcr.io/vioneta/amd64-vionetaos:${{ needs.init.outputs.version }}"
+          # validate_image "ghcr.io/vioneta/i386-vionetaos:${{ needs.init.outputs.version }}"
+          # validate_image "ghcr.io/vioneta/armhf-vionetaos:${{ needs.init.outputs.version }}"
+          # validate_image "ghcr.io/vioneta/armv7-vionetaos:${{ needs.init.outputs.version }}"
+          # validate_image "ghcr.io/vioneta/aarch64-vionetaos:${{ needs.init.outputs.version }}"
 
-          if [[ "${{ matrix.registry }}" ==  "docker.io/homeassistant" ]]; then
+          if [[ "${{ matrix.registry }}" ==  "docker.io/vioneta" ]]; then
             # Upload images to dockerhub
-            push_dockerhub "amd64-homeassistant" "${{ needs.init.outputs.version }}"
-            push_dockerhub "i386-homeassistant" "${{ needs.init.outputs.version }}"
-            push_dockerhub "armhf-homeassistant" "${{ needs.init.outputs.version }}"
-            push_dockerhub "armv7-homeassistant" "${{ needs.init.outputs.version }}"
-            push_dockerhub "aarch64-homeassistant" "${{ needs.init.outputs.version }}"
+            push_dockerhub "amd64-vionetaos" "${{ needs.init.outputs.version }}"
+            push_dockerhub "i386-vionetaos" "${{ needs.init.outputs.version }}"
+            push_dockerhub "armhf-vionetaos" "${{ needs.init.outputs.version }}"
+            push_dockerhub "armv7-vionetaos" "${{ needs.init.outputs.version }}"
+            push_dockerhub "aarch64-vionetaos" "${{ needs.init.outputs.version }}"
           fi
 
           # Create version tag
@@ -447,25 +447,25 @@ jobs:
     environment: ${{ needs.init.outputs.channel }}
     needs: ["init", "build_base"]
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'home-assistant' && needs.init.outputs.publish == 'true'
+    if: github.repository_owner == 'Vioneta' && needs.init.outputs.publish == 'true'
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4.1.7
 
       - name: Set up Python ${{ env.DEFAULT_PYTHON }}
-        uses: actions/setup-python@v5.1.1
+        uses: actions/setup-python@v5.1.0
         with:
           python-version: ${{ env.DEFAULT_PYTHON }}
 
-      - name: Download translations
-        uses: actions/download-artifact@v4.1.8
-        with:
-          name: translations
+      # - name: Download translations
+      #   uses: actions/download-artifact@v4.1.7
+      #   with:
+      #     name: translations
 
-      - name: Extract translations
-        run: |
-          tar xvf translations.tar.gz
-          rm translations.tar.gz
+      # - name: Extract translations
+      #   run: |
+      #     tar xvf translations.tar.gz
+      #     rm translations.tar.gz
 
       - name: Build package
         shell: bash

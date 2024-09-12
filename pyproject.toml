@@ -3,13 +3,13 @@ requires = ["setuptools==69.2.0", "wheel~=0.43.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name        = "homeassistant"
+name        = "vioneta"
 version     = "2024.8.1"
 license     = {text = "Apache-2.0"}
-description = "Open-source home automation platform running on Python 3."
+description = "Smart Agriculture platform running on Python 3."
 readme      = "README.rst"
 authors     = [
-    {name = "The Home Assistant Authors", email = "hello@home-assistant.io"}
+    {name = "The Vioneta Authors", email = "admin@vioneta.com"}
 ]
 keywords    = ["home", "automation"]
 classifiers = [
@@ -73,12 +73,12 @@ dependencies    = [
 ]
 
 [project.urls]
-"Homepage"    = "https://www.home-assistant.io/"
-"Source Code" = "https://github.com/home-assistant/core"
-"Bug Reports" = "https://github.com/home-assistant/core/issues"
-"Docs: Dev"   = "https://developers.home-assistant.io/"
-"Discord"     = "https://www.home-assistant.io/join-chat/"
-"Forum"       = "https://community.home-assistant.io/"
+"Homepage"    = "https://www.vioneta.com/"
+"Source Code" = "https://github.com/Vioneta/core"
+"Bug Reports" = "https://github.com/Vioneta/core/issues"
+"Docs: Dev"   = "https://dev.vioneta.com/"
+"Discord"     = "https://www.vioneta.com/join-chat/"
+"Forum"       = "https://community.vioneta.com/"
 
 [project.scripts]
 hass = "homeassistant.__main__:main"

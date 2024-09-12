@@ -8,7 +8,7 @@ on:
 
 jobs:
   stale:
-    if: github.repository_owner == 'home-assistant'
+    if: github.repository_owner == 'Vioneta'
     runs-on: ubuntu-latest
     steps:
       # The 60 day stale policy for PRs
