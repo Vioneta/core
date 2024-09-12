@@ -24,7 +24,7 @@ RUN \
         --no-build \
         -r homeassistant/requirements.txt
 
-COPY requirements_all.txt home_assistant_frontend-* home_assistant_intents-* homeassistant/
+COPY requirements_all.txt vioneta_agro_frontend-* home_assistant_intents-* homeassistant/
 RUN \
     if ls homeassistant/home_assistant_*.whl 1> /dev/null 2>&1; then \
         uv pip install homeassistant/home_assistant_*.whl; \

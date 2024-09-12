@@ -814,8 +814,8 @@ async def websocket_get_version(
     frontend = None
 
     for req in integration.requirements:
-        if req.startswith("home-assistant-frontend=="):
-            frontend = req.removeprefix("home-assistant-frontend==")
+        if req.startswith("vioneta-agro-frontend=="):
+            frontend = req.removeprefix("vioneta-agro-frontend==")
 
     if frontend is None:
         connection.send_error(msg["id"], "unknown_version", "Version not found")
