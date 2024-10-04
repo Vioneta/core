@@ -23,7 +23,7 @@ async def test_hassio_system_health(
     aioclient_mock.get("http://127.0.0.1/host/info", json={"result": "ok", "data": {}})
     aioclient_mock.get("http://127.0.0.1/os/info", json={"result": "ok", "data": {}})
     aioclient_mock.get("http://127.0.0.1/supervisor/ping", text="")
-    aioclient_mock.get("https://version.home-assistant.io/stable.json", text="")
+    aioclient_mock.get("https://raw.githubusercontent.com/Vioneta/version/refs/heads/master/stable.json", text="")
     aioclient_mock.get(
         "http://127.0.0.1/supervisor/info", json={"result": "ok", "data": {}}
     )
@@ -93,7 +93,7 @@ async def test_hassio_system_health_with_issues(
     aioclient_mock.get("http://127.0.0.1/host/info", json={"result": "ok", "data": {}})
     aioclient_mock.get("http://127.0.0.1/os/info", json={"result": "ok", "data": {}})
     aioclient_mock.get("http://127.0.0.1/supervisor/ping", text="")
-    aioclient_mock.get("https://version.home-assistant.io/stable.json", exc=ClientError)
+    aioclient_mock.get("https://raw.githubusercontent.com/Vioneta/version/refs/heads/master/stable.json", exc=ClientError)
     aioclient_mock.get(
         "http://127.0.0.1/supervisor/info", json={"result": "ok", "data": {}}
     )
