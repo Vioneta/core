@@ -51,7 +51,7 @@ jobs:
 
       - name: Get information
         id: info
-        uses: home-assistant/actions/helpers/info@master
+        uses: Vioneta/actions/helpers/info@master
 
       - name: Create requirements_diff file
         run: |
