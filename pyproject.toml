@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name        = "vioneta"
-version     = "2024.8.1"
+version     = "2024.10.0"
 license     = {text = "Apache-2.0"}
 description = "Smart Agriculture platform running on Python 3."
 readme      = "README.rst"
